@@ -28,7 +28,7 @@ def test_create_pipeline(page, api_delete_all_jobs):  # + фикстура <dele
 
 
     #------------- ✔︎ EXPECTATIONS: ---------------
-    # Созданный job (item) появился в таблице на Dashboard
+    # Созданный job (item) появился в таблице
     expect(table_pipeline_name,
            f'❌Pipeline "{pipeline_name}" not found on the Dashboard able!').to_have_text(pipeline_name)
 
