@@ -52,7 +52,7 @@ class BasePage:
         return self.page.get_by_role('link', name='New Item')
     @property
     def delete_item_btn(self):
-        return self.page.locator('[class="icon-edit-delete icon-md"]')           # 🗑️ (by icon)
+        return self.page.locator('[class="icon-edit-delete icon-md"]')                 # 🗑️ (by icon)
     @property
     def delete_item_confirm_yes_btn(self):
         return self.page.locator('button[data-id="ok"]')

@@ -41,7 +41,7 @@ def page_guest(playwright: Playwright):                     # Чистый (бе
     page = page_guest ✨
     page.locator().click()
     ----------------------
-    """ # <- ✨                                       # <- см. Лайфхак ✨
+    """ # <- ✨                                             # <- см. Лайфхак ✨
     browser = playwright.chromium.launch(                   # Запуск движка браузера с параметрами:
         channel='chromium',                                 # - UI оболочка: 'chromium', 'chrome', 'opera'
         headless=False,                                     # - False = показывать браузер
@@ -64,7 +64,7 @@ def page_guest(playwright: Playwright):                     # Чистый (бе
 """
 -----------------------------------------------------------
 1) Залогинил User
-2) Редиректнул на Main page
+2) Редирект на Main page
 3) Сохранил Storage State на всю сессию
 4) Закрылся
 5) -> далее логику выполняет обычный .page с этой фикстурой

@@ -18,9 +18,9 @@ def test_manage_jenkins_btn_is_clickable(page):
     action = main_page.manage_jenkins_btn.click                 # 👈️click без () - ⚠️действие, а не результат
     response = API.api_by_status_code(                          # ✨ Моя функция перехвата API
         page,
-        action,                                                 # Передаем action и status code
-        302,                                              # Ожидаемый status code при переходе клике
-        True)                                         # API REPORT (print in console)
+        action,                                                 # Передаем action и status code302
+        302,                                               # Ожидаемый status code при переходе клике
+        True)                                          # API REPORT (print in console)
 
     #--------------- 𝌮 VARIABLES: ----------------
     title_text = manage_jenkins_page.TITLE_TEXT

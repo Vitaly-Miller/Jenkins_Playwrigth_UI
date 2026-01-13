@@ -5,7 +5,7 @@ from dotenv import load_dotenv
 import os
 
 #=======================================================================================================================
-# Reading .env
+# Reading _.env
 load_dotenv()
 
 class Base:
