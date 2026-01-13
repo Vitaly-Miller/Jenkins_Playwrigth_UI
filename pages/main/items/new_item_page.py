@@ -30,6 +30,9 @@ class NewItemPage(BasePage):
     def pipeline_link(self):
         return self.page.get_by_text('Pipeline', exact=True)
     @property
+    def multi_configuration_project_link(self):
+        return self.page.get_by_text('Multi-configuration project', exact=True)
+    @property
     def folder_link(self):
         return self.page.get_by_text('Folder', exact=True)
 
@@ -62,6 +65,12 @@ class NewItemPage(BasePage):
         self.pipeline_link.click()                         # Select <Pipeline>
         self.ok_btn.click()                                # Click <OK> button -→ <Configuration - General> page         http://localhost:8080/job/gbvn/configure
 
+    """ Create Multi-configuration project """
+    def create_multi_configuration_project(self, item_name: str):
+        self.enter_item_name_field.fill(item_name)         # Fill Item name field
+        self.multi_configuration_project_link.click()                           # Select <Folder>
+        self.ok_btn.click()                                # Click <OK> button -→ <Configuration - General> page         http://localhost:8080/job/gbvn/configure
+
     """ Create Folder """
     def create_folder(self, item_name: str):
         self.enter_item_name_field.fill(item_name)         # Fill Item name field
@@ -70,5 +79,3 @@ class NewItemPage(BasePage):
 
 
     #-------------------------------------------------------------------------------------------------------------------
-
-

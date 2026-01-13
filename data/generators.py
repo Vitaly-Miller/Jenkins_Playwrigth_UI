@@ -22,5 +22,6 @@ class Fake:
     pipeline_name = f'Pipline-{random_10_99}'                            # Pipline-82
     folder_name = f'Folder-{random_10_99}'                               # Folder-31
     freestyle_project_name = f'Freestyle Project-{random_10_99}'         # Freestyle Project-74
+    multi_configuration_project_name = f'Multi-configuration Project-{random_10_99}'     # Multi-configuration Project-21
 
     view_name = f'View-{random_10_99}'                                   # View-45

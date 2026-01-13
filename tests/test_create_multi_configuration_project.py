@@ -1,7 +1,8 @@
 """
-Created Pipeline is visible on Dashboard
+Created Multi‑configuration project is visible on Dashboard
 TC_00_000_00
 """
+
 from pages.main.main_page import MainPage
 from pages.main.items.new_item_page import NewItemPage
 from pages.main.items.item_configuration_general_page import ConfigurationGeneralPage
@@ -10,20 +11,21 @@ from playwright.sync_api import expect
 from func.api import API
 
 #=======================================================================================================================
-def test_create_pipeline(page, api_delete_all_jobs):  # + фикстура <delete_all_jobs> - удаляет ВСЕ jobs ПЕРЕД тестом     - (optional)
+def test_create_multi_configuration_project(page):
+
     #-------------- ⧈ PAGE OBJECTS: --------------
     main_page = MainPage(page)
     new_item_page = NewItemPage(page)
     configuration_general_page = ConfigurationGeneralPage(page)
 
     #-------------- ⏎ DATA (input): --------------
-    item_name = Fake.pipeline_name
+    item_name = Fake.multi_configuration_project_name
 
     #---------------- ▶︎ ACTIONS: -----------------
-    main_page.open_page()                             # -→ <Main> page (Dashboard)                                       http://localhost:8080/
-    main_page.new_item_btn.click()                    # Click <New item> button -→ <New Item> page                       http://localhost:8080/view/all/newJob
-    new_item_page.create_pipeline(item_name)          # ✨Create Pipeline -→ <Configuration - General> page              http://localhost:8080/job/=PIPELINE_NAME=/configure
-    configuration_general_page.logo_btn.click()       # Click <Jenkins> logo -→ <Main> page (Dashboard)                  http://localhost:8080/
+    main_page.open_page()                                       # -→ <Main> page (Dashboard)                             http://localhost:8080/
+    main_page.new_item_btn.click()                              # Click <New Item> button -→ <New Item> page             http://localhost:8080/view/all/newJob
+    new_item_page.create_multi_configuration_project(item_name) # ✨Create Project -→ <Configuration - General> page     http://localhost:8080/job/=PROJ_NAME=/configure
+    configuration_general_page.logo_btn.click()                 # Click <Jenkins> logo -→ <Main> page (Dashboard)        http://localhost:8080/
 
     #--------------- 𝌮 VARIABLES: ----------------
     table_item_name = main_page.table_item_name_link(item_name)
