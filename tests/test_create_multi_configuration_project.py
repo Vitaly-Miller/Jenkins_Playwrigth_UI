@@ -2,7 +2,6 @@
 Created Multi‑configuration project is visible on Dashboard
 TC_00_000_00
 """
-
 from pages.main.main_page import MainPage
 from pages.main.items.new_item_page import NewItemPage
 from pages.main.items.item_configuration_general_page import ConfigurationGeneralPage

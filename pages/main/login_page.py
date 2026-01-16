@@ -33,7 +33,7 @@ class LoginPage(BasePage):
     #===================================================== ✨HELPERS ===================================================
     """ Open <Login> page """
     def open_page(self):
-        return self.open(self.ENDPOINT)                     # -→ <Login> page                                            http://localhost:8080/login
+        self.open(self.ENDPOINT)                            # -→ <Login> page                                            http://localhost:8080/login
 
     """ Log in (Authorization) on the Login Page """        # Admin data by Default
     def user_log_in(

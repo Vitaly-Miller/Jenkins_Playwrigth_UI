@@ -2,6 +2,7 @@
 Created Pipeline is visible on Dashboard
 TC_00_000_00
 """
+import allure
 from pages.main.main_page import MainPage
 from pages.main.items.new_item_page import NewItemPage
 from pages.main.items.item_configuration_general_page import ConfigurationGeneralPage
@@ -10,6 +11,11 @@ from playwright.sync_api import expect
 from func.api import API
 
 #=======================================================================================================================
+@allure.epic('Jenkins')
+@allure.story('New Item')
+@allure.feature('Create Pipeline')
+@allure.description('Created Pipeline is visible on Dashboard')
+@allure.testcase('TC_00_000_00')
 def test_create_pipeline(page, api_delete_all_jobs):  # + фикстура <delete_all_jobs> - удаляет ВСЕ jobs ПЕРЕД тестом     - (optional)
     #-------------- ⧈ PAGE OBJECTS: --------------
     main_page = MainPage(page)

@@ -1,5 +1,5 @@
 """
-API
+API helpers
 """
 import json
 from data.base_data import Base
@@ -7,7 +7,8 @@ import requests
 
 #=======================================================================================================================
 class API:
-    #------------------- Delete user ---------------------
+    #------------------------ Users ----------------------
+    # Delete user
     @staticmethod
     def delete_user(username: str):
         requests.post(
@@ -15,7 +16,8 @@ class API:
             auth=(Base.USERNAME, Base.API_TOKEN))
 
 
-    #------------------ Delete job (item) ----------------
+    #-------------------- Jobs (Items) -------------------
+    # Delete job (Item) by nane
     @staticmethod
     def delete_job(job_name: str):
         requests.post(
@@ -23,7 +25,7 @@ class API:
             auth=(Base.USERNAME, Base.API_TOKEN))
 
 
-    #--------------- Delete ALL jobs (items) -------------
+    # Delete ALL jobs (Items)
     @staticmethod
     def delete_all_jobs():
         # Получение [списка] всех jobs
@@ -82,7 +84,8 @@ class API:
         return response
 
 
-    #--------------------- API Details --------------------
+    #==================== API Details ==================
+    #------------------------ Base ---------------------
     # Title
     @staticmethod
     def api_title():
@@ -103,6 +106,7 @@ class API:
     def api_status_code(response):
         print(f'STATUS CODE: {response.status}')
 
+    #----------------------- Body ---------------------
     # Request headers
     @staticmethod
     def api_request_headers(response):
@@ -158,4 +162,3 @@ class API:
         API.api_response_headers(response)
         API.api_request_body(response)
         API.api_response_body(response)
-

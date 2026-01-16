@@ -47,7 +47,7 @@ class CreateUserPage(BasePage):
     #===================================================== ✨HELPERS ===================================================
     """ Open <Create User> page """
     def open_page(self):
-        return self.open(self.ENDPOINT)                         # -→ <Create User> page                                  http://localhost:8080/manage/securityRealm/addUser
+        self.open(self.ENDPOINT)                                # -→ <Create User> page                                  http://localhost:8080/manage/securityRealm/addUser
 
     """ Fill all fields with User data (Fake data by default) """
     def fill_user_data_fields(
@@ -65,4 +65,3 @@ class CreateUserPage(BasePage):
         self.email_field.fill(email)
         self.create_user_btn.click()                            # -→ <Jenkins’ own User Database> page                   http://localhost:8080/manage/securityRealm
 #-----------------------------------------------------------------------------------------------------------------------
-

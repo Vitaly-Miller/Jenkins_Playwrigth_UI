@@ -12,7 +12,7 @@ def test_create_item_invalid_name_error(page):
     new_item_page = NewItemPage(page)
 
     #-------------- ⏎ DATA (input): --------------
-    invalid_item_name = 'Invalid#Name'
+    invalid_item_name = 'Invalid#Name'                            # <#> - non accessible symbol
 
     #---------------- ▶︎ ACTIONS: -----------------
     main_page.open_page()                                         # -→ <Main> page (Dashboard)                           http://localhost:8080/

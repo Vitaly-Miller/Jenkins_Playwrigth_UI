@@ -120,23 +120,22 @@ class BasePage:
     #================================================= ✨HELPERS =======================================================
     """ OPEN PAGE """
     def open(self, endpoint: str):
-        return self.page.goto(endpoint)
+        self.page.goto(endpoint)
 
     """ Add description """
     def add_description(self, text: str):
-        self.add_description_btn.click()             # Open description form
-        self.description_field.fill(text)            # Fill text
-        self.save_description_btn.click()            # Click Save button (Save description)
+        self.add_description_btn.click()                       # Open description form
+        self.description_field.fill(text)                      # Fill text
+        self.save_description_btn.click()                      # Click Save button (Save description)
 
     """ Edit description """
     def edit_description(self, text: str):
-        self.edit_description_btn.click()            # Open description form
-        self.description_field.fill(text)            # Fill text                                                         ⚠ Предварительная отчистка поля не требуется.
-        self.save_description_btn.click()            # Click Save button (Save description)
+        self.edit_description_btn.click()                      # Open description form
+        self.description_field.fill(text)                      # Fill text                                               ⚠ Предварительная отчистка поля не требуется.
+        self.save_description_btn.click()                      # Click Save button (Save description)
 
     """ Clear description """
     def clear_description(self):
-        self.add_description_btn.click()             # Open description filling form
-        self.description_field.clear()               # Clear description field
-        self.save_description_btn.click()            # Click Save button (Save description)
-
+        self.add_description_btn.click()                       # Open description filling form
+        self.description_field.clear()                         # Clear description field
+        self.save_description_btn.click()                      # Click Save button (Save description)
