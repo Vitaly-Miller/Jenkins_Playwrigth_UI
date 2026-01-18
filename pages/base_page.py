@@ -15,12 +15,12 @@ class BasePage:
 
     #---------------- ㉧ LOCATORS: ----------------
     # -Panels-
-    # -- Main panel--
+    # --Main panel--
     @property
     def main_panel(self):
         return self.page.locator('#main-panel')
 
-    # --︎ Top panel (header) --
+    # --︎Top panel (header)--
     @property
     def top_panel(self):
         return self.page.locator('#page-header')
@@ -34,7 +34,7 @@ class BasePage:
     def manage_jenkins_btn(self):
         return self.page.get_by_role('link', name='Manage Jenkins')               # -→ <Manage Jenkins> page        http://localhost:8080/manage
 
-    # -- Left side panel--
+    # --Left side panel--
     @property
     def left_panel(self):
         return self.page.locator('#side-panel')
@@ -81,7 +81,7 @@ class BasePage:
     def pipeline_syntax_btn(self):
         return self.page.get_by_role('link', name='Pipeline Syntax')
 
-    # -- Footer panel--
+    # --Footer panel--
     @property
     def footer_panel(self):
         return self.page.locator('#footer')
