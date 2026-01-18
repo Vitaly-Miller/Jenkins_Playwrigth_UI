@@ -3,31 +3,105 @@ API helpers
 """
 from data.base_data import Base
 import requests
+from data.generators import Fake
 from formatting.console_report import APIreport
 
 #=======================================================================================================================
 class API:
-    #------------------------ Users ----------------------
-    # Delete user
+    #====================== Users ======================
+    #------------------- Create user -------------------
+    # Create user
+    @staticmethod
+    def create_user(
+            username: str = Fake.username,
+            password: str = Fake.user_password,
+            fullname: str = Fake.user_full_name,
+            email: str = Fake.user_email
+    ):
+        requests.post(
+            url=f'{Base.URL}/securityRealm/createAccountByAdmin',
+            auth=(Base.USERNAME, Base.API_TOKEN),
+            data={
+                'username': username,
+                'password1': password,
+                'password2': password,
+                'fullname': fullname,
+                'email': email
+            }
+        )
+
+    #------------------- Delete user -------------------
+    # Delete user by username
     @staticmethod
     def delete_user(username: str):
         requests.post(
-            url=f"{Base.URL}/user/{username}/doDelete",
-            auth=(Base.USERNAME, Base.API_TOKEN))
+            url=f'{Base.URL}/user/{username}/doDelete',
+            auth=(Base.USERNAME, Base.API_TOKEN)
+        )
 
 
-    #-------------------- Jobs (Items) -------------------
-    # Delete job (Item) by nane
+    #================== Items (Jobs) =================
+    #------------- Create items by types -------------
+    # Create Pipeline
     @staticmethod
-    def delete_job(job_name: str):
+    def create_pipeline(item_name: str = Fake.pipeline_name):
         requests.post(
-            url=f"{Base.URL}/job/{job_name}/doDelete",
+            url=f'{Base.URL}/view/all/createItem',
+            auth=(Base.USERNAME, Base.API_TOKEN),
+            data={
+                'name': item_name,
+                'mode': 'org.jenkinsci.plugins.workflow.job.WorkflowJob'
+            }
+        )
+
+    # Create Free Style Project
+    @staticmethod
+    def create_free_style_project(item_name: str = Fake.freestyle_project_name):
+        requests.post(
+            url=f'{Base.URL}/view/all/createItem',
+            auth=(Base.USERNAME, Base.API_TOKEN),
+            data={
+                'name': item_name,
+                'mode': 'hudson.model.FreeStyleProject'
+            }
+        )
+
+    # Create Multi-configuration project
+    @staticmethod
+    def create_multi_configuration_project(item_name: str = Fake.multi_configuration_project_name):
+        requests.post(
+            url=f'{Base.URL}/view/all/createItem',
+            auth=(Base.USERNAME, Base.API_TOKEN),
+            data={
+                'name': item_name,
+                'mode': 'hudson.matrix.MatrixProject'
+            }
+        )
+
+    # Create Folder
+    @staticmethod
+    def create_folder(item_name: str = Fake.folder_name):
+        requests.post(
+            url=f'{Base.URL}/view/all/createItem',
+            auth=(Base.USERNAME, Base.API_TOKEN),
+            data={
+                'name': item_name,
+                'mode': 'com.cloudbees.hudson.plugins.folder.Folder'
+            }
+        )
+
+    #------------------ Delete items -----------------
+    # Delete item (job) by nane
+    @staticmethod
+    def delete_item(item_name: str):
+        requests.post(
+            url=f"{Base.URL}/job/{item_name}/doDelete",
             auth=(Base.USERNAME, Base.API_TOKEN))
 
 
-    # Delete ALL jobs (Items)
+    # Delete ALL items (jobs)
     @staticmethod
-    def delete_all_jobs():
+    def delete_all_items():
         # Получение [списка] всех jobs
         jobs_lst = requests.get(
             url=f'{Base.URL}/api/json',
@@ -35,13 +109,13 @@ class API:
         ).json()['jobs']
         # Удаление каждого job по имени (цикл for)
         for job in jobs_lst:
-            job_name = job['name']
+            item_name = job['name']
             requests.post(
-                url=f'{Base.URL}/job/{job_name}/doDelete',
+                url=f'{Base.URL}/job/{item_name}/doDelete',
                 auth=(Base.USERNAME, Base.API_TOKEN))
 
 
-    #---------- API перехват (.expect_response()) ----------
+    #========= API перехват (.expect_response()) =========
     # by Status code
     """
         Ожидание Request + Перехват Response <status code>
@@ -56,32 +130,22 @@ class API:
              4) Как только условие вернуло True — это "наш" <r> → положи его в переменную response_info
     """
     @staticmethod
-    def api_by_status_code(
-            page,
-            action,
-            code: int,
-            api_report: bool = False                                             # NO API report by default
-    ):
+    def api_by_status_code(page, action, code: int, api_report: bool = False):   # NO API report by default
         with page.expect_response(lambda r: r.status == code) as response_info:  # Перехватить Response с определенным <status code>
             action()                                                             # 👈 Перехватываемый action
-            response = response_info.value                                       # Внутренний объект-контейнер => в рабочий Response
+            response = response_info.value                                       # Внутренний контейнер => в рабочий Response
             if api_report:
                 API.report(response)                                             # API REPORT в консоль if True (optional)
         return response
 
     # by URL
     @staticmethod
-    def api_by_url(
-            page,
-            action,
-            url: str,
-            api_report: bool = False                               # NO API report by default
-    ):
-        with page.expect_response(url) as response_info:           # Перехватить Response c URL
-            action()                                               # 👈 Перехватываемый action
-            response = response_info.value                         # Внутренний объект-контейнер => в рабочий Response
+    def api_by_url(page, action, url: str, api_report: bool = False):  # NO API report by default
+        with page.expect_response(url) as response_info:               # Перехватить Response c URL
+            action()                                                   # 👈 Перехватываемый action
+            response = response_info.value                             # Внутренний контейнер => в рабочий Response
             if api_report:
-                API.report(response)                               # API REPORT в консоль if True (optional)
+                API.report(response)                                   # API REPORT в консоль if True (optional)
         return response
 
 

@@ -35,7 +35,7 @@ def test_create_new_folder(page):
     expect(table_display_name, f'❌Item "{display_name}" not found on the Dashboard table!').to_have_text(display_name)
 
     #---------------- ⌫ CLEANUP: ----------------
-    # (API) Delete Job
-    API.delete_job(item_name)
+    # (API) Delete item (job)
+    API.delete_item(item_name)
 
 #-----------------------------------------------------------------------------------------------------------------------

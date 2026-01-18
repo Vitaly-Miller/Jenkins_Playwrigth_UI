@@ -22,9 +22,9 @@ class Fake:
     # Item Types
     pipeline_name = f'Pipline-{random_10_99}'                                         # Pipline-82
     folder_name = f'Folder-{random_10_99}'                                            # Folder-31
-    freestyle_project_name = f'Freestyle Project-{random_10_99}'                      # Freestyle Project-74
-    multi_configuration_project_name = f'Multi-configuration Project-{random_10_99}'  # Multi-configuration Project-21
+    freestyle_project_name = f'Freestyle_Project-{random_10_99}'                      # Freestyle Project-74
+    multi_configuration_project_name = f'Multi-configuration_Project-{random_10_99}'  # Multi-configuration Project-21
 
     # User-friendly names
-    display_item_name = f'Display name-{random_10_99}'                                # Display Name-58
-    view_item_name = f'View name-{random_10_99}'                                      # View-45
+    display_item_name = f'Display_name-{random_10_99}'                                # Display Name-58
+    view_item_name = f'View_name-{random_10_99}'                                      # View-45

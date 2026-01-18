@@ -18,18 +18,17 @@ def test_create_view_in_folder(page):
     item_page = NewItemPage(page)
     new_view_page = NewViewPage(page)
     view_page = ViewPage(page)
-    fake = Fake()
 
     #-------------- ⏎ DATA (input): --------------
-    folder_name = fake.folder_name
-    view_name = fake.view_name
+    item_name = Fake.folder_name
+    view_name = Fake.view_item_name
 
     #-------------- ◁ PRECONDITION: --------------
     # Create new folder -> Open folder
     new_item_page.open_page()                               # -→ <New Item> page                                         http://localhost:8080/view/all/newJob
-    new_item_page.create_folder(folder_name)                # ✨Create new folder -→ <Configuration - General> page      http://localhost:8080/job/=ITEM_MANE=/configure
+    new_item_page.create_folder(item_name)                  # ✨Create new folder -→ <Configuration - General> page      http://localhost:8080/job/=ITEM_MANE=/configure
     main_page.logo_btn.click()                              # Click <Jenkins> logo -→ <Main> page (Dashboard)            http://localhost:8080/
-    main_page.table_item_name_link(folder_name).click()     # Click folder name -→ <Folder> page                         http://localhost:8080/job/=ITEM_NAME=/
+    main_page.table_item_name_link(item_name).click()       # Click folder name -→ <Folder> page                         http://localhost:8080/job/=ITEM_NAME=/
 
     #---------------- ▶︎ ACTIONS: -----------------
     item_page.new_view_btn.click()                          # Click <New View> button -→ <New View> page                 http://localhost:8080/job/=ITEM_NAME=/newView
@@ -38,9 +37,9 @@ def test_create_view_in_folder(page):
     new_view_page.create_btn.click()                        # Click <Create> button -→ <View> page                       http://localhost:8080/job/=ITEM_NAME=/view/=VIEW_NAME=/
 
     #--------------- 𝌮 VARIABLES: ----------------
-    expected_url = view_page.endpoint(folder_name,  view_name)
-    expected_title_text = view_page.title_text(folder_name, view_name)
-    expected_header_text = view_page.header_text(folder_name)
+    expected_url = view_page.endpoint(item_name,  view_name)
+    expected_title_text = view_page.title_text(item_name, view_name)
+    expected_header_text = view_page.header_text(item_name)
 
 
     #------------- ✔︎ EXPECTATIONS: --------------
@@ -52,7 +51,7 @@ def test_create_view_in_folder(page):
     expect(view_page.header, f'❌Incorrect Header text').to_have_text(expected_header_text)
 
     #---------------- ⌫ CLEANUP: -----------------
-    # (API) Delete job after test
-    API.delete_job(folder_name)
+    # (API) Delete item (job)
+    API.delete_item(item_name)
 
 #-----------------------------------------------------------------------------------------------------------------------

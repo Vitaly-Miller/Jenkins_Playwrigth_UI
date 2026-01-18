@@ -39,7 +39,7 @@ def test_create_pipeline(page, api_delete_all_jobs):  # + фикстура <dele
     expect(table_item_name, f'❌Item "{item_name}" not found on the Dashboard able!').to_have_text(item_name)
 
     #---------------- ⌫ CLEANUP: -----------------
-    # (API) Delete Job
-    API.delete_job(item_name)
+    # (API) Delete item (job)
+    API.delete_item(item_name)
 
 #-----------------------------------------------------------------------------------------------------------------------
