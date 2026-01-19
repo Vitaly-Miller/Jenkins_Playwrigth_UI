@@ -25,7 +25,6 @@ def test_create_item_invalid_name_error(page):
     ok_btn = new_item_page.ok_btn
     text_red_color = new_item_page.ERROR_MSG_TEXT_COLOR
 
-
     #------------- ✔︎ EXPECTATIONS: ---------------
     # Error appears
     expect(error_msg, '❌Error message did NOT appear!').to_be_visible()

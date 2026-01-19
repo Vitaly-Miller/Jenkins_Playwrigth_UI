@@ -1,12 +1,13 @@
 """
-✨TITLES for console
+✨Console report (beautify)
 """
 import json
 from formatting.colors import *
 
 #=======================================================================================================================
 class APIreport:
-    #------------------------ Base ---------------------
+    """ ⚠️USE with .expect_response() only """
+    #------------------------- Base ----------------------
     # Title
     @staticmethod
     def title():
@@ -43,8 +44,8 @@ class APIreport:
         else: color = RESET
         print(f'{GRAY}└╴Status code: {color}{obj}{RESET}')
 
-    #----------------------- Body ---------------------
-    # Request headers
+    #------------------------ JSON -----------------------
+    # Request headers ⮕
     @staticmethod
     def request_headers(response):
         print(f'\n{BROWN}REQUEST HEADERS{GRAY}: ⮕')
@@ -52,18 +53,18 @@ class APIreport:
         obj_json = json.dumps(obj, indent=4, ensure_ascii=False)
         print(f'{obj_json}{RESET}')
 
-    # Request body
+    # Request body ⮕
     @staticmethod
     def request_body(response):
         print(f'\n{GREEN}REQUEST BODY{GRAY}: ⮕')
-        if not response.request.post_data:
-            print(f'{{\n\t<None>\n}}{RESET}')
-        else:
+        if response.request.post_data:  # 👈 <.post_data> for <page.expect_response()>
             obj = json.loads(response.request.post_data)
             obj_json = json.dumps(obj, indent=4, ensure_ascii=False)
             print(f'{obj_json}{RESET}')
+        else:
+            print(f'{{\n\t<None>\n}}{RESET}')
 
-    # Response headers
+    # Response headers ⬅︎
     @staticmethod
     def response_headers(response):
         print(f'\n{BROWN_ORANGE}RESPONSE HEADERS{GRAY}: ⬅︎')
@@ -71,7 +72,7 @@ class APIreport:
         obj_json = json.dumps(obj, indent=4,ensure_ascii=False)
         print(f'{obj_json}{RESET}')
 
-    # Response body
+    # Response body ⬅︎
     @staticmethod
     def response_body(response):
         print(f'\n{BLUE}RESPONSE BODY{GRAY}: ⬅︎')
@@ -82,3 +83,5 @@ class APIreport:
             print(f'{obj_json}{RESET}')
         else:
             print(f'\t<HTML> / non-JSON content>')
+
+    #---------------------------------------------------
