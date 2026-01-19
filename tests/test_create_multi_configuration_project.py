@@ -18,7 +18,7 @@ def test_create_multi_configuration_project(page):
     configuration_general_page = ConfigurationGeneralPage(page)
 
     #-------------- ⏎ DATA (input): --------------
-    item_name = Fake.multi_configuration_project_name
+    item_name = Fake.item_name
 
     #---------------- ▶︎ ACTIONS: -----------------
     main_page.open_page()                                       # -→ <Main> page (Dashboard)                             http://localhost:8080/

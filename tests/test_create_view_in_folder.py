@@ -20,7 +20,7 @@ def test_create_view_in_folder(page):
     view_page = ViewPage(page)
 
     #-------------- ⏎ DATA (input): --------------
-    item_name = Fake.folder_name
+    item_name = Fake.item_name
     view_name = Fake.view_item_name
 
     #-------------- ◁ PRECONDITION: --------------
@@ -37,7 +37,7 @@ def test_create_view_in_folder(page):
     new_view_page.create_btn.click()                        # Click <Create> button -→ <View> page                       http://localhost:8080/job/=ITEM_NAME=/view/=VIEW_NAME=/
 
     #--------------- 𝌮 VARIABLES: ----------------
-    expected_url = view_page.endpoint(item_name,  view_name)
+    expected_url = view_page.endpoint(item_name, view_name)
     expected_title_text = view_page.title_text(item_name, view_name)
     expected_header_text = view_page.header_text(item_name)
 

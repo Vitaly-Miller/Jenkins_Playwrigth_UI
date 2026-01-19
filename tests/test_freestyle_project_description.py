@@ -19,14 +19,14 @@ def test_freestyle_project_description(page):
     item_page = ItemPage(page)
 
     #-------------- ⏎ DATA (input): --------------
-    freestyle_project_name = Fake.freestyle_project_name
+    item_name = Fake.item_name
     description_text = 'My test description text - 1234567890!'
     new_description_text = 'My NEW test description text - 👀✅❌✔️😀👍!'
 
     #---------------- ▶︎ ACTIONS: ----------------
     main_page.open_page()                                            # Open <Main> page                                  http://localhost:8080/
     main_page.new_item_btn.click()                                   # Click <New Item> button -→ <New Item> page        http://localhost:8080/view/all/newJob
-    new_item_page.create_freestyle_project(freestyle_project_name)   # ✨Create a Freestyle project -→ Config  page      http://localhost:8080/job/=FREESTYLE_PROJECT_NAME=/configure
+    new_item_page.create_freestyle_project(item_name)                # ✨Create a Freestyle project -→ Config  page      http://localhost:8080/job/=FREESTYLE_PROJECT_NAME=/configure
     configuration_general_page.save_btn.click()                      # Click <Save> button -→ <Item> page                http://localhost:8080/job/=FREESTYLE_PROJECT_NAME=
     new_item_page.add_description(description_text)                  # ✨Add Description -→ <Item> page                  http://localhost:8080/job/=FREESTYLE_PROJECT_NAME=
     item_page.edit_description(new_description_text)                 # ✨Edit Description -→ <Item> page                 http://localhost:8080/job/=FREESTYLE_PROJECT_NAME=
@@ -47,6 +47,6 @@ def test_freestyle_project_description(page):
 
     #---------------- ⌫ CLEANUP: -----------------
     # (API) Delete job
-    API.delete_job(freestyle_project_name)
+    API.delete_item(item_name)
 
 #-----------------------------------------------------------------------------------------------------------------------

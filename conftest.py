@@ -96,7 +96,7 @@ def cookies(playwright: Playwright):
 #================================================ API-fixtures (Pre-test)===============================================
 """ Delete ALL jobs before test """
 @pytest.fixture
-def api_delete_all_jobs():
-    API.delete_all_jobs()
+def api_delete_all_items():
+    API.delete_all_items()
 
 #-----------------------------------------------------------------------------------------------------------------------

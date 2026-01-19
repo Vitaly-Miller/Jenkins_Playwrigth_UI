@@ -27,4 +27,3 @@ class ViewPage(BasePage):
     """ Open <View> page """
     def open_page(self, item_name: str, view_name: str):
         return self.open(self.endpoint(item_name, view_name))      # -→ <View> page                                      http://localhost:8080/job/=ITEM_NAME=/view/=VIEW_NAME=/
-

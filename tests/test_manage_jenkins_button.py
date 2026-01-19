@@ -16,7 +16,7 @@ def test_manage_jenkins_btn_is_clickable(page):
     #---------------- ▶︎ ACTIONS: -----------------
     main_page.open_page()                                       # -→ <Main page> (Dashboard)                             http://localhost:8080/
     action = main_page.manage_jenkins_btn.click                 # 👈️click без () - ⚠️действие, а не результат
-    response = API.api_by_status_code(                          # ✨ Моя функция перехвата API
+    response = API.by_status_code(                              # ✨ Моя функция перехвата API
         page,
         action,                                                 # Передаем action и status code302
         302,                                              # Ожидаемый status code при action

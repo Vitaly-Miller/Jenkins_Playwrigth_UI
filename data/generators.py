@@ -9,7 +9,12 @@ from faker import Faker
 # Setup:
 fake = Faker()
 random_10_99 = random.randint(10, 99)                                           # 10 ≤ int ≤ 99
-
+random_type = random.choice(
+    ['pipeline',
+     'free_style_project',
+     'multi_configuration_project',
+     'folder'
+     ])
 
 class Fake:
     #---------- User data (credentials): ----------
@@ -18,12 +23,11 @@ class Fake:
     user_full_name = fake.name()                                                      # John Connor (Last + First name)
     user_email = fake.email()                                                         # john.connor@example.com
 
-    #---------------- Items names: ----------------
-    # Item Types
-    pipeline_name = f'Pipline-{random_10_99}'                                         # Pipline-82
-    folder_name = f'Folder-{random_10_99}'                                            # Folder-31
-    freestyle_project_name = f'Freestyle_Project-{random_10_99}'                      # Freestyle Project-74
-    multi_configuration_project_name = f'Multi-configuration_Project-{random_10_99}'  # Multi-configuration Project-21
+    #------------------ Items: --------------------
+
+    item_name = f'Item-{random_10_99}'                                # Default_Item-43
+    random_item_type = random_type
+
 
     # User-friendly names
     display_item_name = f'Display_name-{random_10_99}'                                # Display Name-58
