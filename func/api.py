@@ -1,5 +1,5 @@
 """
-API helpers
+API Functions and Helpers
 """
 from data.base_data import Base
 import requests
@@ -7,7 +7,7 @@ from data.generators import Fake
 from formatting.console_report import APIreport
 
 #=======================================================================================================================
-class API:
+class APIintercept:
     # ---------------- API interception  -----------------
     # Intercept by Status code
     """
@@ -42,7 +42,7 @@ class API:
         return response
 
 
-
+class API:
     #======================= Users =======================
     #-------------------- Create user --------------------
     # Create user
@@ -50,8 +50,9 @@ class API:
     def create_user(
             username: str = Fake.username,
             password: str = Fake.user_password,
-            fullname: str = Fake.user_full_name,
-            email: str = Fake.user_email
+            full_name: str = Fake.user_full_name,
+            email: str = Fake.user_email,
+            api_report: bool = False
     ):
         requests.post(
             url=f'{Base.URL}{Base.CREATE_USER_ENDPOINT}',
@@ -60,7 +61,7 @@ class API:
                 'username': username,
                 'password1': password,
                 'password2': password,
-                'fullname': fullname,
+                'fullname': full_name,
                 'email': email
             }
         )

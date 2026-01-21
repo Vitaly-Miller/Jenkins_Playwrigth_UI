@@ -5,6 +5,7 @@ http://localhost:8080/manage/securityRealm/addUser
 from pages.base_page import BasePage
 from data.generators import Fake
 
+
 #=======================================================================================================================
 class CreateUserPage(BasePage):
     #------------------ 𝌆 DATA: ------------------
@@ -44,10 +45,12 @@ class CreateUserPage(BasePage):
         return self.page.locator('div.error')   # ⚠ <Password> & <Confirm Password> error messages => list = ["x", "x"]
 
 
+
     #===================================================== ✨HELPERS ===================================================
     """ Open <Create User> page """
     def open_page(self):
         self.open(self.ENDPOINT)                                # -→ <Create User> page                                  http://localhost:8080/manage/securityRealm/addUser
+
 
     """ Fill all fields with User data (Fake data by default) """
     def fill_user_data_fields(
@@ -64,4 +67,5 @@ class CreateUserPage(BasePage):
         self.full_name_field.fill(full_name)
         self.email_field.fill(email)
         self.create_user_btn.click()                            # -→ <Jenkins’ own User Database> page                   http://localhost:8080/manage/securityRealm
+
 #-----------------------------------------------------------------------------------------------------------------------

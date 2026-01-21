@@ -20,6 +20,7 @@ class BasePage:
     def main_panel(self):
         return self.page.locator('#main-panel')
 
+
     # --︎Top panel (header)--
     @property
     def top_panel(self):
@@ -33,6 +34,7 @@ class BasePage:
     @property
     def manage_jenkins_btn(self):
         return self.page.get_by_role('link', name='Manage Jenkins')               # -→ <Manage Jenkins> page        http://localhost:8080/manage
+
 
     # --Left side panel--
     @property
@@ -81,11 +83,6 @@ class BasePage:
     def pipeline_syntax_btn(self):
         return self.page.get_by_role('link', name='Pipeline Syntax')
 
-    # --Footer panel--
-    @property
-    def footer_panel(self):
-        return self.page.locator('#footer')
-
 
     # -Tab bar-
     @property
@@ -94,6 +91,12 @@ class BasePage:
     @property
     def new_view_btn(self):
         return self.page.get_by_role('link', name='New View')              # -→ <New View> page                     http://localhost:8080/newView
+
+
+    # --Footer panel--
+    @property
+    def footer_panel(self):
+        return self.page.locator('#footer')
 
 
     # -Description-

@@ -2,6 +2,8 @@
 Create item invalid name error
 """
 from playwright.sync_api import expect
+
+from data.invalid_data import Invalid
 from pages.main.items.new_item_page import NewItemPage
 from pages.main.main_page import MainPage
 
@@ -12,7 +14,7 @@ def test_create_item_invalid_name_error(page):
     new_item_page = NewItemPage(page)
 
     #-------------- ⏎ DATA (input): --------------
-    invalid_item_name = 'Invalid#Name'                            # <#> - non accessible symbol
+    invalid_item_name = Invalid.ITEM_NAME                            # <#> - non accessible symbol
 
     #---------------- ▶︎ ACTIONS: -----------------
     main_page.open_page()                                         # -→ <Main> page (Dashboard)                           http://localhost:8080/

@@ -13,20 +13,20 @@ class Invalid:
 
     #-------------- Admin data (Credentials) --------------
     # Username
-    USERNAME_WRONG = 'WrongUsername'                              # Invalid username
+    USERNAME = 'WrongUsername'                                    # Invalid username
     USERNAME = ''                                                 # <>
     USERNAME_SPACE = ' '                                          # < >
     USERNAME_SPACE_END = Base.USERNAME + ' '                      # <Username >
     USERNAME_SPACE_BEGIN = ' ' + Base.USERNAME                    # < Username>
 
     #----------------------- Password ---------------------
-    PASSWORD_WRONG = 'Wrong_Password_135'                         # Invalid Password
+    PASSWORD = 'Wrong_Password_135'                               # Invalid Password
     PASSWORD_EMPTY = ''                                           # <>
     PASSWORD_SPACE = ' '                                          # < >
     PASSWORD_123 = '123'                                          # <123>
 
     #------------------- Confirm password -----------------
-    CONFIRM_PASSWORD_WRONG = 'Wrong_confirm_password_135'         # Invalid confirm password
+    CONFIRM_PASSWORD = 'Wrong_confirm_password_135'               # Invalid confirm password
     CONFIRM_PASSWORD_EMPTY = ''                                   # <>
     CONFIRM_PASSWORD_SPACE = ' '                                  # < >
     CONFIRM_PASSWORD_SPACE_END = Base.PASSWORD + ' '              # <Valid_Password  >

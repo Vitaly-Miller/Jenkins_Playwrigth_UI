@@ -4,6 +4,7 @@ TC_00_000_00
 """
 from pages.manage.create_user_page import CreateUserPage
 from pages.manage.user_database_page import UserDatabasePage
+from data.invalid_data import Invalid
 from playwright.sync_api import expect
 
 #=======================================================================================================================
@@ -16,7 +17,7 @@ def test_create_user_password_error_message(page):
     user_database_page.open_page()                        # -→ <Jenkins’ own User Database> page (Table)                 http://localhost:8080/manage/securityRealm
     user_database_page.create_user_btn.click()            # Click <Create User> button -→ <Create User>  page            http://localhost:8080/manage/securityRealm/addUser
     create_user_page.fill_user_data_fields(               # ✨Fill with User Fake data (by default), but ....
-        confirm_password='Incorrect_confirm_password'     # ... + ❌Incorrect confirm password (changes default value)
+        confirm_password=Invalid.CONFIRM_PASSWORD         # ... + ❌Incorrect confirm password (changes default value)
     )                                                     # -→ <Jenkins’ own User Database> page (Table)                 http://localhost:8080/manage/securityRealm
 
     #--------------- 𝌮 VARIABLES: ----------------
