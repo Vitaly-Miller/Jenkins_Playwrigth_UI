@@ -1,5 +1,5 @@
 """
-Create user password error message
+Create user password error
 TC_00_000_00
 """
 from pages.manage.create_user_page import CreateUserPage
@@ -8,7 +8,7 @@ from data.invalid_data import Invalid
 from playwright.sync_api import expect
 
 #=======================================================================================================================
-def test_create_user_password_error_message(page):
+def test_create_user_password_error(page):
     #-------------- ⧈ PAGE OBJECTS: --------------
     create_user_page = CreateUserPage(page)
     user_database_page = UserDatabasePage(page)
@@ -25,10 +25,10 @@ def test_create_user_password_error_message(page):
     message_list = message.all_text_contents()            # ['text_1', 'text_2']
     text_1 = message_list[0]
     text_2 = message_list[1]
-    expected_text = CreateUserPage.PASSWORD_ERROR_MSG_TEXT
+    expected_text = CreateUserPage.PASSWORD_ERROR_TEXT
 
 
-    #--------------- ✔ ASSERTIONS: --------------- (optional variants)
+    #--------------- ✔ ASSERTIONS: --------------- (optional)
     # 1) Length of an error message is 2 objects in [list]
     assert len(message_list) == 2
     # 2) Error message has whole text

@@ -21,10 +21,10 @@ def test_create_item_existing_name_error(page):
     API.create_freestyle_project(item_name)
 
     # ---------------- ▶︎ ACTIONS: -----------------
-    main_page.open()                                              # Open <Main> page (Dashboard)                         http://localhost:8080/
-    main_page.new_item_btn.click()                                # Click <New item> button -→ <New Item> page           http://localhost:8080/view/all/newJob
-    new_item_page.freestyle_project_link.click()                  # Select Freestyle project type
-    new_item_page.enter_item_name_field.fill(item_name)           # ❌Fill existing item name
+    main_page.open()                                                  # Open <Main> page (Dashboard)                     http://localhost:8080/
+    main_page.new_item_btn.click()                                    # Click <New item> button -→ <New Item> page       http://localhost:8080/view/all/newJob
+    new_item_page.freestyle_project_link.click()                      # Select Freestyle project type
+    new_item_page.enter_item_name_field.fill(item_name)               # ❌Fill existing item name
 
     # --------------- 𝌮 VARIABLES: ----------------
     error_msg = new_item_page.invalid_item_name_error_msg
@@ -43,6 +43,7 @@ def test_create_item_existing_name_error(page):
     expect(ok_btn, '❌<OK> button is enable!').to_be_disabled()
 
     #----------------- ⌫ CLEANUP: -----------------
+    # (API) Delete all items
     API.delete_all_items()
 
 #-----------------------------------------------------------------------------------------------------------------------

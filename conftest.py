@@ -1,5 +1,5 @@
 """
-Pytest Fixtures
+Pytest fixtures
 """
 import pytest
 from playwright.sync_api import Playwright, ViewportSize
@@ -30,7 +30,7 @@ def page(playwright: Playwright, storage_state):            # User Log in and st
     context.close()
     browser.close()
 
-#-------------------------------------
+#------------------------------------------------------
 """ GUEST Page (БЕЗ storage_state) """
 @pytest.fixture
 def page_guest(playwright: Playwright):                     # Чистый (без доп. фикстур)

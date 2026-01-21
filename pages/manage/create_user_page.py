@@ -14,7 +14,7 @@ class CreateUserPage(BasePage):
     HEADER_TEXT = 'Create User'
 
     #------------- 🅔 DATA (Errors): --------------
-    PASSWORD_ERROR_MSG_TEXT = ["Password didn't match", "Password didn't match"]
+    PASSWORD_ERROR_TEXT = ["Password didn't match", "Password didn't match"]
 
     #---------------- ㉧ LOCATORS: ----------------
     # -User data fields-
