@@ -43,6 +43,5 @@ class NewViewPage(BasePage):
 
     #==================================================== ✨HELPERS ====================================================
     """ Open <New View> page """
-    def open_page(self, item_name: str):
-        return self.open(self.endpoint(item_name))         # -→ <New View> page                                          http://localhost:8080/job/=ITEM_NAME=/newView
-
+    def open(self, item_name: str):
+        return self.open_page(self.endpoint(item_name))         # -→ <New View> page                                          http://localhost:8080/job/=ITEM_NAME=/newView

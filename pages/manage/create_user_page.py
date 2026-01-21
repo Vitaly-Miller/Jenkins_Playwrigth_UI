@@ -48,8 +48,8 @@ class CreateUserPage(BasePage):
 
     #===================================================== ✨HELPERS ===================================================
     """ Open <Create User> page """
-    def open_page(self):
-        self.open(self.ENDPOINT)                                # -→ <Create User> page                                  http://localhost:8080/manage/securityRealm/addUser
+    def open(self):
+        self.open_page(self.ENDPOINT)                                # -→ <Create User> page                                  http://localhost:8080/manage/securityRealm/addUser
 
 
     """ Fill all fields with User data (Fake data by default) """

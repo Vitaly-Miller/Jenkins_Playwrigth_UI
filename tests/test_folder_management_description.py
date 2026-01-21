@@ -14,7 +14,7 @@ def test_fill_description(page):
     description_text = 'My test description text - 1234567890!'
 
     #---------------- ▶︎ ACTIONS: -----------------
-    main_page.open_page()                                   # -→ <Main> page (Dashboard)                                 http://localhost:8080/
+    main_page.open()                                        # -→ <Main> page (Dashboard)                                 http://localhost:8080/
     main_page.add_description(description_text)             # ✨Open description form and fill text
 
 

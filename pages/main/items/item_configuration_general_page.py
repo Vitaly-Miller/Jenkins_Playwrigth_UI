@@ -50,8 +50,8 @@ class ConfigurationGeneralPage(BasePage):
 
     #================================================== ✨HELPERS ======================================================
     """ Open <Item Configuration - General> page """
-    def open_page(self, item_name: str):
-        return self.open(self.endpoint(item_name))         # -→ <Item Configuration - General> page                      http://localhost:8080/job/=ITEM_NAME=/configure
+    def open(self, item_name: str):
+        return self.open_page(self.endpoint(item_name))         # -→ <Item Configuration - General> page                      http://localhost:8080/job/=ITEM_NAME=/configure
 
     """ Fill Display name (Folder) """
     def fill_display_name(self, display_item_name: str):

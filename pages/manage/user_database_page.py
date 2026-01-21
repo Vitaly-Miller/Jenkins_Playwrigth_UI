@@ -43,8 +43,8 @@ class UserDatabasePage(BasePage):
 
     #===================================================== ✨HELPERS ===================================================
     """ Open <Jenkins’ own User Database> page """
-    def open_page(self):
-        self.page.goto(self.ENDPOINT)                      # -→ <Jenkins’ own user database> page                        http://localhost:8080/manage/securityRealm
+    def open(self):
+        self.open_page(self.ENDPOINT)                      # -→ <Jenkins’ own user database> page                        http://localhost:8080/manage/securityRealm
 
     """ Delete User """
     def delete_user(self, username: str):

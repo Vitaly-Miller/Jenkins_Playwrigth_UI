@@ -121,10 +121,11 @@ class BasePage:
 
 
     #================================================= ✨HELPERS =======================================================
-    """ OPEN PAGE """
-    def open(self, endpoint: str):
+    """ BASE OPEN PAGE """
+    def open_page(self, endpoint: str):
         self.page.goto(endpoint)
 
+    # Description
     """ Add description """
     def add_description(self, text: str):
         self.add_description_btn.click()                       # Open description form

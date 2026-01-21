@@ -14,7 +14,7 @@ def test_create_user_password_error_message(page):
     user_database_page = UserDatabasePage(page)
 
     #---------------- ▶︎ ACTIONS: -----------------
-    user_database_page.open_page()                        # -→ <Jenkins’ own User Database> page (Table)                 http://localhost:8080/manage/securityRealm
+    user_database_page.open()                             # -→ <Jenkins’ own User Database> page (Table)                 http://localhost:8080/manage/securityRealm
     user_database_page.create_user_btn.click()            # Click <Create User> button -→ <Create User>  page            http://localhost:8080/manage/securityRealm/addUser
     create_user_page.fill_user_data_fields(               # ✨Fill with User Fake data (by default), but ....
         confirm_password=Invalid.CONFIRM_PASSWORD         # ... + ❌Incorrect confirm password (changes default value)

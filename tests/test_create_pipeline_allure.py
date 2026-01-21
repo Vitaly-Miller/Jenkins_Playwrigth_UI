@@ -26,7 +26,7 @@ def test_create_pipeline(page, api_delete_all_items):  # + фикстура <del
     item_name = Fake.item_name
 
     #---------------- ▶︎ ACTIONS: -----------------
-    main_page.open_page()                             # -→ <Main> page (Dashboard)                                       http://localhost:8080/
+    main_page.open()                                  # -→ <Main> page (Dashboard)                                       http://localhost:8080/
     main_page.new_item_btn.click()                    # Click <New item> button -→ <New Item> page                       http://localhost:8080/view/all/newJob
     new_item_page.create_pipeline(item_name)          # ✨Create Pipeline -→ <Configuration - General> page              http://localhost:8080/job/=PIPELINE_NAME=/configure
     configuration_general_page.logo_btn.click()       # Click <Jenkins> logo -→ <Main> page (Dashboard)                  http://localhost:8080/
@@ -42,4 +42,5 @@ def test_create_pipeline(page, api_delete_all_items):  # + фикстура <del
     # (API) Delete item (job)
     API.delete_item(item_name)
 
-#-----------------------------------------------------------------------------------------------------------------------
+#-----------------------------------------------------------
+# ------------------------------------------------------------

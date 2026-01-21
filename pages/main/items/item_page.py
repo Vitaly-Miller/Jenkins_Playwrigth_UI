@@ -40,11 +40,10 @@ class ItemPage(BasePage):
 
     #===================================================== ✨HELPERS ===================================================
     """ Open <Item> page """
-    def open_page(self, item_name: str):
-        self.open(self.endpoint(item_name))                # -→ <Item> page                                              http://localhost:8080/view/all/job/=ITEM_NAME=
+    def open(self, item_name: str):
+        self.open_page(self.endpoint(item_name))                # -→ <Item> page                                              http://localhost:8080/view/all/job/=ITEM_NAME=
 
     """ Delete Item by left panel """
     def delete_item_by_left_panel(self):
         self.delete_item_btn.click()                       # Click <Delete Item> button on the Left side panel
         self.delete_item_confirm_yes_btn.click()           # Click <Yes> dialog button -→ Confirm deletion
-

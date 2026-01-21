@@ -24,5 +24,5 @@ class MainPage(BasePage):
 
     #===================================================== ✨HELPERS ===================================================
     """ Open <Main> page (Dashboard) """
-    def open_page(self):
-        self.open(self.ENDPOINT)                                                  # -→ <Main> page (Dashboard)           http://localhost:8080/
+    def open(self):
+        self.open_page(self.ENDPOINT)                                                  # -→ <Main> page (Dashboard)           http://localhost:8080/

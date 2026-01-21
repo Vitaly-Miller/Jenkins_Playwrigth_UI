@@ -84,8 +84,8 @@ class API:
     ):
         if item_type == 'pipeline':
             item_mode = Base.PIPELINE_API_MODE
-        elif item_type == 'free_style_project':
-            item_mode = Base.FREE_STYLE_PROJECT_API_MODE
+        elif item_type == 'freestyle_project':
+            item_mode = Base.FREESTYLE_PROJECT_API_MODE
         elif item_type == 'multi_configuration_project':
             item_mode = Base.MULTI_CONFIGURATION_PROJECT_API_MODE
         elif item_type == 'folder':
@@ -115,15 +115,15 @@ class API:
             }
         )
 
-    # Create Free Style Project
+    # Create Freestyle project
     @staticmethod
-    def create_free_style_project(item_name: str = Fake.item_name):
+    def create_freestyle_project(item_name: str = Fake.item_name):
         requests.post(
             url=f'{Base.URL}{Base.CREATE_ITEM_ENDPOINT}',
             auth=(Base.USERNAME, Base.API_TOKEN),
             data={
                 'name': item_name,
-                'mode': Base.FREE_STYLE_PROJECT_API_MODE
+                'mode': Base.FREESTYLE_PROJECT_API_MODE
             }
         )
 

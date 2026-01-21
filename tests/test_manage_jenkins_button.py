@@ -14,7 +14,7 @@ def test_manage_jenkins_btn_is_clickable(page):
     manage_jenkins_page = ManageJenkinsPage(page)
 
     #---------------- ▶︎ ACTIONS: -----------------
-    main_page.open_page()                                       # -→ <Main page> (Dashboard)                             http://localhost:8080/
+    main_page.open()                                            # -→ <Main page> (Dashboard)                             http://localhost:8080/
     action = main_page.manage_jenkins_btn.click                 # 👈️click без () - ⚠️действие, а не результат
     response = APIintercept.by_status_code(                     # ✨ Моя функция перехвата API
         page,
