@@ -25,7 +25,7 @@ def test_create_view_in_folder(page):
 
     #-------------- ◁ PRECONDITION: --------------
     # Create new folder -> Open folder
-    new_item_page.open()                                    # -→ <New Item> page                                         http://localhost:8080/view/all/newJob
+    new_item_page.open()                                    # Open <New Item> page                                       http://localhost:8080/view/all/newJob
     new_item_page.create_folder(item_name)                  # ✨Create new folder -→ <Configuration - General> page      http://localhost:8080/job/=ITEM_MANE=/configure
     main_page.logo_btn.click()                              # Click <Jenkins> logo -→ <Main> page (Dashboard)            http://localhost:8080/
     main_page.table_item_name_link(item_name).click()       # Click folder name -→ <Folder> page                         http://localhost:8080/job/=ITEM_NAME=/
@@ -40,7 +40,6 @@ def test_create_view_in_folder(page):
     expected_url = view_page.endpoint(item_name, view_name)
     expected_title_text = view_page.title_text(item_name, view_name)
     expected_header_text = view_page.header_text(item_name)
-
 
     #------------- ✔︎ EXPECTATIONS: --------------
     # Page URL

@@ -19,14 +19,13 @@ def test_create_user(page):
     user_full_name = Fake.user_full_name
 
     #---------------- ▶︎ ACTIONS: -----------------
-    user_database_page.open()                        # -> <Jenkins’ own User Database> page (Table)                      http://localhost:8080/manage/securityRealm
-    user_database_page.create_user_btn.click()       # Click <Create User> button> -→ <Create User> page                 http://localhost:8080/manage/securityRealm/addUser
-    create_user_page.fill_user_data_fields()         # ✨Fill User data fields -→ <Jenkins’ own User Database> page      http://localhost:8080/manage/securityRealm
+    user_database_page.open()                          # Open <Jenkins’ own User Database> page (Table)                  http://localhost:8080/manage/securityRealm
+    user_database_page.create_user_btn.click()         # Click <Create User> button> -→ <Create User> page               http://localhost:8080/manage/securityRealm/addUser
+    create_user_page.fill_user_data_fields()           # ✨Fill User data fields -→ <Jenkins’ own User Database> page    http://localhost:8080/manage/securityRealm
 
     # --------------- 𝌮 VARIABLES: ---------------
     table_user_id = user_database_page.table_user_id(username)
     table_user_name = user_database_page.table_user_name(user_full_name)
-
 
     #------------- ✔︎ EXPECTATIONS: ---------------
     # Created <Username> появился в таблице (User ID)
@@ -39,6 +38,5 @@ def test_create_user(page):
     user_database_page.delete_user(username)
     # (API) Delete created User (optional)
     API.delete_user(username)
-
 
 #-----------------------------------------------------------------------------------------------------------------------

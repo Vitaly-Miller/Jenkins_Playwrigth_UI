@@ -21,10 +21,10 @@ def test_create_multi_configuration_project(page):
     item_name = Fake.item_name
 
     #---------------- ▶︎ ACTIONS: -----------------
-    main_page.open()                                            # -→ <Main> page (Dashboard)                             http://localhost:8080/
-    main_page.new_item_btn.click()                              # Click <New Item> button -→ <New Item> page             http://localhost:8080/view/all/newJob
-    new_item_page.create_multi_configuration_project(item_name) # ✨Create Project -→ <Configuration - General> page     http://localhost:8080/job/=PROJ_NAME=/configure
-    configuration_general_page.logo_btn.click()                 # Click <Jenkins> logo -→ <Main> page (Dashboard)        http://localhost:8080/
+    main_page.open()                                              # Open <Main> page (Dashboard)                         http://localhost:8080/
+    main_page.new_item_btn.click()                                # Click <New Item> button -→ <New Item> page           http://localhost:8080/view/all/newJob
+    new_item_page.create_multi_configuration_project(item_name)   # ✨Create Project -→ <Configuration - General> page   http://localhost:8080/job/=ITEM_NAME=/configure
+    configuration_general_page.logo_btn.click()                   # Click <Jenkins> logo -→ <Main> page (Dashboard)      http://localhost:8080/
 
     #--------------- 𝌮 VARIABLES: ----------------
     table_item_name = main_page.table_item_name_link(item_name)

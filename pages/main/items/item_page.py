@@ -7,19 +7,6 @@ from pages.base_page import BasePage
 #=======================================================================================================================
 class ItemPage(BasePage):
     #------------------ 𝌆 DATA: ------------------
-    """
-    ⚠️DO NOT USE lambda for POM!
-
-    ENDPOINT = lambda item_name: f'/view/all/job/{item_name}/' ❌
-    TITLE_TEXT = lambda item_name: f'{item_name} - Jenkins'    ❌
-    HEADER_TEXT = lambda item_name: f'{item_name}'             ❌
-    ╭╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╮
-    ┊  Use for parametrized DATA: ┊
-    ╰╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╯
-        @staticmethod
-        def <func>():
-             return ...
-    """
     @staticmethod
     def endpoint(item_name: str):
         return f'/view/all/job/{item_name}/'
@@ -41,9 +28,9 @@ class ItemPage(BasePage):
     #===================================================== ✨HELPERS ===================================================
     """ Open <Item> page """
     def open(self, item_name: str):
-        self.open_page(self.endpoint(item_name))                # -→ <Item> page                                              http://localhost:8080/view/all/job/=ITEM_NAME=
+        self.open_page(self.endpoint(item_name))              # -→ <Item> page                                           http://localhost:8080/view/all/job/=ITEM_NAME=
 
     """ Delete Item by left panel """
     def delete_item_by_left_panel(self):
-        self.delete_item_btn.click()                       # Click <Delete Item> button on the Left side panel
-        self.delete_item_confirm_yes_btn.click()           # Click <Yes> dialog button -→ Confirm deletion
+        self.delete_item_btn.click()                          # Click <Delete Item> button on the Left side panel
+        self.delete_item_confirm_yes_btn.click()              # Click <Yes> dialog button -→ Confirm deletion

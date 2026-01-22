@@ -1,11 +1,11 @@
 """
 Create item invalid name error
+TC_00_000_00
 """
-from playwright.sync_api import expect
-
 from data.invalid_data import Invalid
 from pages.main.items.new_item_page import NewItemPage
 from pages.main.main_page import MainPage
+from playwright.sync_api import expect
 
 #=======================================================================================================================
 def test_create_item_invalid_name_error(page):
@@ -17,7 +17,7 @@ def test_create_item_invalid_name_error(page):
     invalid_item_name = Invalid.ITEM_NAME
 
     #---------------- ▶︎ ACTIONS: -----------------
-    main_page.open()                                              # -→ <Main> page (Dashboard)                           http://localhost:8080/
+    main_page.open()                                              # Open <Main> page (Dashboard)                         http://localhost:8080/
     main_page.new_item_btn.click()                                # Click <New Item> button -→ <New Item> page           http://localhost:8080/view/all/newJob
     new_item_page.pipeline_link.click()                           # Select Pipeline type
     new_item_page.enter_item_name_field.fill(invalid_item_name)   # ❌Fill invalid item name

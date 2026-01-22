@@ -36,7 +36,6 @@ def test_freestyle_project_description(page):
     edit_description_btn = item_page.edit_description_btn
     expected_edit_description_btn_text = item_page.EDIT_DESCRIPTION_BTN_TEXT
 
-
     #------------- ✔︎ EXPECTATIONS: --------------
     # New description is displayed below the freestyle project name
     expect(description_header,

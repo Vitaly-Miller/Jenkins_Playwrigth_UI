@@ -6,20 +6,20 @@ from pages.base_page import BasePage
 
 #=======================================================================================================================
 class ConfigurationGeneralPage(BasePage):
-    #------------------ 𝌆 DATA: ------------------
     """
-    ⚠️DO NOT USE lambda for POM!
+        ⚠️DO NOT USE lambda for POM!
 
-    ENDPOINT = lambda item_name: f'/view/all/job/{item_name}/' ❌
-    TITLE_TEXT = lambda item_name: f'{item_name} - Jenkins'    ❌
-    HEADER_TEXT = lambda item_name: f'{item_name}'             ❌
-    ╭╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╮
-    ┊  Use for parametrized DATA: ┊
-    ╰╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╯
-        @staticmethod
-        def <func>():
-             return ...
-    """
+        ENDPOINT = lambda item_name: f'/view/all/job/{item_name}/' ❌
+        TITLE_TEXT = lambda item_name: f'{item_name} - Jenkins'    ❌
+        HEADER_TEXT = lambda item_name: f'{item_name}'             ❌
+        ╭╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╮
+        ┊  Use for parametrized DATA: ┊
+        ╰╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╯
+            @staticmethod
+            def <func>():
+                 return ...
+        """
+    #------------------ 𝌆 DATA: ------------------
     @staticmethod
     def endpoint(item_name: str):
         return f'/view/all/job/{item_name}/configure'

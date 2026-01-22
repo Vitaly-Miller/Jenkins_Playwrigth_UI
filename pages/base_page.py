@@ -8,6 +8,7 @@ from playwright.sync_api import Page
 class BasePage:
     def __init__(self, page: Page):
         self.page = page
+
     #------------------ 𝌆 DATA: ------------------
     EDIT_DESCRIPTION_BTN_TEXT = 'Edit description'
     SAVE_DESCRIPTION_BTN_TEXT = 'Save'

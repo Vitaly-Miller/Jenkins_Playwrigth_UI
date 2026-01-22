@@ -28,7 +28,6 @@ class NewViewPage(BasePage):
     def view_name_field(self):
         return self.page.locator('#name')
 
-
     # -View Types (radio buttons)-
     @property
     def include_a_global_view_type(self):
