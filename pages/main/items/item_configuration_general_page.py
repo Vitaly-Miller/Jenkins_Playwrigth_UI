@@ -51,9 +51,9 @@ class ConfigurationGeneralPage(BasePage):
     #================================================== ✨HELPERS ======================================================
     """ Open <Item Configuration - General> page """
     def open(self, item_name: str):
-        return self.open_page(self.endpoint(item_name))         # -→ <Item Configuration - General> page                      http://localhost:8080/job/=ITEM_NAME=/configure
+        return self.open_page(self.endpoint(item_name))         # Open <Item Configuration - General> page                 http://localhost:8080/job/=ITEM_NAME=/configure
 
     """ Fill Display name (Folder) """
     def fill_display_name(self, display_item_name: str):
-        self.display_name_field.fill(display_item_name)    # Fill <Display Name> field (User-friendly)
-        self.save_btn.click()                              # Click <Save> button -→ <Folder> page                        http://localhost:8080/job/=ITEM_NAME=/
+        self.display_name_field.fill(display_item_name)         # Fill <Display Name> field (User-friendly)
+        self.save_btn.click()                                   # Click <Save> button -→ <Folder> page                   http://localhost:8080/job/=ITEM_NAME=/

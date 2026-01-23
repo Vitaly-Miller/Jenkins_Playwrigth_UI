@@ -51,32 +51,32 @@ class NewItemPage(BasePage):
     #===================================================== ✨HELPERS ===================================================
     """ Open <New Item> page """
     def open(self):
-        self.open_page(self.ENDPOINT)                           # -→ <New Item> page                                          http://localhost:8080/view/all/newJob
+        self.open_page(self.ENDPOINT)                          # Open <New Item> page                                      http://localhost:8080/view/all/newJob
 
-    # CREATE ITEMS (by Types): ⚠️ Don't forget open page
+    # CREATE ITEMS (by Types): (⚠️ Don't forget open page)
     """ Create Freestyle project """
     def create_freestyle_project(self, item_name: str = Fake.item_name):
-        self.enter_item_name_field.fill(item_name)         # Fill Item name field
-        self.freestyle_project_link.click()                # Select <Freestyle project>
-        self.ok_btn.click()                                # Click <OK> button -→ <Configuration - General> page         http://localhost:8080/job/gbvn/configure
+        self.enter_item_name_field.fill(item_name)             # Fill Item name field
+        self.freestyle_project_link.click()                    # Select <Freestyle project>
+        self.ok_btn.click()                                    # Click <OK> button -→ <Configuration - General> page     http://localhost:8080/job/gbvn/configure
 
     """ Create Pipeline """
     def create_pipeline(self, item_name: str = Fake.item_name):
-        self.enter_item_name_field.fill(item_name)         # Fill Item name field
-        self.pipeline_link.click()                         # Select <Pipeline>
-        self.ok_btn.click()                                # Click <OK> button -→ <Configuration - General> page         http://localhost:8080/job/gbvn/configure
+        self.enter_item_name_field.fill(item_name)             # Fill Item name field
+        self.pipeline_link.click()                             # Select <Pipeline>
+        self.ok_btn.click()                                    # Click <OK> button -→ <Configuration - General> page     http://localhost:8080/job/gbvn/configure
 
     """ Create Multi-configuration project """
     def create_multi_configuration_project(self, item_name: str = Fake.item_name):
-        self.enter_item_name_field.fill(item_name)         # Fill Item name field
-        self.multi_configuration_project_link.click()                           # Select <Folder>
-        self.ok_btn.click()                                # Click <OK> button -→ <Configuration - General> page         http://localhost:8080/job/gbvn/configure
+        self.enter_item_name_field.fill(item_name)             # Fill Item name field
+        self.multi_configuration_project_link.click()          # Select <Folder>
+        self.ok_btn.click()                                    # Click <OK> button -→ <Configuration - General> page     http://localhost:8080/job/gbvn/configure
 
     """ Create Folder """
     def create_folder(self, item_name: str = Fake.item_name):
-        self.enter_item_name_field.fill(item_name)         # Fill Item name field
-        self.folder_link.click()                           # Select <Folder>
-        self.ok_btn.click()                                # Click <OK> button -→ <Configuration - General> page         http://localhost:8080/job/gbvn/configure
+        self.enter_item_name_field.fill(item_name)             # Fill Item name field
+        self.folder_link.click()                               # Select <Folder>
+        self.ok_btn.click()                                    # Click <OK> button -→ <Configuration - General> page     http://localhost:8080/job/gbvn/configure
 
 
     #-------------------------------------------------------------------------------------------------------------------

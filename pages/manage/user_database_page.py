@@ -44,10 +44,10 @@ class UserDatabasePage(BasePage):
     #===================================================== ✨HELPERS ===================================================
     """ Open <Jenkins’ own User Database> page """
     def open(self):
-        self.open_page(self.ENDPOINT)                      # -→ <Jenkins’ own user database> page                        http://localhost:8080/manage/securityRealm
+        self.open_page(self.ENDPOINT)                               # Open <Jenkins’ own user database> page             http://localhost:8080/manage/securityRealm
 
     """ Delete User """
     def delete_user(self, username: str):
-        self.user_dropdown_menu_chevron(username).click()  # Open user dropdown menu
-        self.dropdown_menu_delete_btn(username).click()    # Click <Delete> button
-        self.delete_yes_bnt.click()                        # Click <Yes> button (Confirm deletion)
+        self.user_dropdown_menu_chevron(username).click()           # Open user dropdown menu
+        self.dropdown_menu_delete_btn(username).click()             # Click <Delete> button
+        self.delete_yes_bnt.click()                                 # Click <Yes> button (Confirm deletion)

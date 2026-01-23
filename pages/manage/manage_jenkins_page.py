@@ -17,4 +17,4 @@ class ManageJenkinsPage(BasePage):
     #===================================================== ✨HELPERS ===================================================
     """ Open <Manage Jenkins> page """
     def open(self):
-        self.open_page(self.ENDPOINT)                      # -→ <Manage Jenkins> page                                    http://localhost:8080/manage
+        self.open_page(self.ENDPOINT)                      # Open <Manage Jenkins> page                                  http://localhost:8080/manage
