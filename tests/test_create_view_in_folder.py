@@ -2,9 +2,9 @@
 Create new View inside the Folder
 TC_00.000.00
 """
-from pages.main.items.new_item_page import NewItemPage
-from pages.main.items.new_view_page import NewViewPage
-from pages.main.items.view_page import ViewPage
+from pages.items.new_item_page import NewItemPage
+from pages.items.new_view_page import NewViewPage
+from pages.items.view_page import ViewPage
 from pages.main.main_page import MainPage
 from data.generators import Fake
 from playwright.sync_api import expect

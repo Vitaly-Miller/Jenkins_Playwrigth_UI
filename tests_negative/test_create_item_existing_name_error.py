@@ -3,7 +3,7 @@ Existing item name error
 TC_00_000_00
 """
 from pages.main.main_page import MainPage
-from pages.main.items.new_item_page import NewItemPage
+from pages.items.new_item_page import NewItemPage
 from func.api import API
 from playwright.sync_api import expect
 

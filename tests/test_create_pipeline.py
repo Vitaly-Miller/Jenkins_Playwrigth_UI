@@ -3,8 +3,8 @@ Created Pipeline is visible on Dashboard
 TC_00_000_00
 """
 from pages.main.main_page import MainPage
-from pages.main.items.new_item_page import NewItemPage
-from pages.main.items.item_configuration_general_page import ConfigurationGeneralPage
+from pages.items.new_item_page import NewItemPage
+from pages.items.item_configuration_general_page import ConfigurationGeneralPage
 from data.generators import Fake
 from playwright.sync_api import expect
 from func.api import API
@@ -30,7 +30,7 @@ def test_create_pipeline(page, api_delete_all_items):  # + фикстура <del
 
     #------------- ✔︎ EXPECTATIONS: ---------------
     # Созданный Item появился в таблице
-    expect(table_item_name, f'❌Item "{item_name}" not found on the Dashboard able!').to_have_text(item_name)
+    expect(table_item_name, f'❌Item "{item_name}" not found on the Dashboard table!').to_have_text(item_name)
 
     #---------------- ⌫ CLEANUP: -----------------
     # (API) Delete item (job)

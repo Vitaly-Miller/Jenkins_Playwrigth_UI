@@ -69,7 +69,7 @@ class NewItemPage(BasePage):
     """ Create Multi-configuration project """
     def create_multi_configuration_project(self, item_name: str = Fake.item_name):
         self.enter_item_name_field.fill(item_name)             # Fill Item name field
-        self.multi_configuration_project_link.click()          # Select <Folder>
+        self.multi_configuration_project_link.click()          # Select <Multi-configuration project>
         self.ok_btn.click()                                    # Click <OK> button -→ <Configuration - General> page     http://localhost:8080/job/gbvn/configure
 
     """ Create Folder """

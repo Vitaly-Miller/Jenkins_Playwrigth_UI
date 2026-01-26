@@ -3,7 +3,7 @@ Create item invalid name error
 TC_00_000_00
 """
 from data.invalid_data import Invalid
-from pages.main.items.new_item_page import NewItemPage
+from pages.items.new_item_page import NewItemPage
 from pages.main.main_page import MainPage
 from playwright.sync_api import expect
 

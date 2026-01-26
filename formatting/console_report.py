@@ -57,7 +57,7 @@ class APIreport:
     @staticmethod
     def request_body(response):
         print(f'\n{GREEN}REQUEST BODY{GRAY}: ⮕')
-        if response.request.post_data:  # 👈 <.post_data> for <page.expect_response()>
+        if response.request.post_data:  # 👈  <.post_data> for <page.expect_response()>
             obj = json.loads(response.request.post_data)
             obj_json = json.dumps(obj, indent=4, ensure_ascii=False)
             print(f'{obj_json}{RESET}')

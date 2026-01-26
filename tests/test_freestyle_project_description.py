@@ -4,9 +4,9 @@ TC_00_000_00
 """
 from playwright.sync_api import expect
 from data.generators import Fake
-from pages.main.items.item_configuration_general_page import ConfigurationGeneralPage
-from pages.main.items.item_page import ItemPage
-from pages.main.items.new_item_page import NewItemPage
+from pages.items.item_configuration_general_page import ConfigurationGeneralPage
+from pages.items.item_page import ItemPage
+from pages.items.new_item_page import NewItemPage
 from pages.main.main_page import MainPage
 from func.api import API
 
