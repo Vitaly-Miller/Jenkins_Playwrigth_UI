@@ -19,7 +19,7 @@ class ConfigurationGeneralPage(BasePage):
             def <func>():
                  return ...
         """
-    #------------------ 𝌆 DATA: ------------------
+    # ------------------ 𝌆 DATA: ------------------
     @staticmethod
     def endpoint(item_name: str):
         return f'/view/all/job/{item_name}/configure'
@@ -28,7 +28,7 @@ class ConfigurationGeneralPage(BasePage):
         return f'{item_name} Config - Jenkins'
 
     HEADER_TEXT = 'General'
-    #---------------- ㉧ LOCATORS: ----------------
+    # ---------------- ㉧ LOCATORS: ----------------
     # - Texts -
     @property
     def header(self):

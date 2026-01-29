@@ -11,28 +11,28 @@ from func.api import API
 
 #=======================================================================================================================
 def test_create_multi_configuration_project(page):
-    #-------------- ⧈ PAGE OBJECTS: --------------
+    # -------------- ⧈ PAGE OBJECTS: --------------
     main_page = MainPage(page)
     new_item_page = NewItemPage(page)
     configuration_general_page = ConfigurationGeneralPage(page)
 
-    #-------------- ⏎ DATA (input): --------------
+    # -------------- ⏎ DATA (input): --------------
     item_name = Fake.item_name
 
-    #---------------- ▶︎ ACTIONS: -----------------
+    # ---------------- ▶︎ ACTIONS: -----------------
     main_page.open()                                              # Open <Main> page (Dashboard)                         http://localhost:8080/
     main_page.new_item_btn.click()                                # Click <New Item> button -→ <New Item> page           http://localhost:8080/view/all/newJob
     new_item_page.create_multi_configuration_project(item_name)   # ✨Create Project -→ <Configuration - General> page   http://localhost:8080/job/=ITEM_NAME=/configure
     configuration_general_page.logo_btn.click()                   # Click <Jenkins> logo -→ <Main> page (Dashboard)      http://localhost:8080/
 
-    #--------------- 𝌮 VARIABLES: ----------------
+    # --------------- 𝌮 VARIABLES: ----------------
     table_item_name = main_page.table_item_name_link(item_name)
 
-    #------------- ✔︎ EXPECTATIONS: ---------------
+    # ------------- ✔︎ EXPECTATIONS: ---------------
     # Созданный Item появился в таблице
     expect(table_item_name, f'❌Item "{item_name}" not found on the Dashboard table!').to_have_text(item_name)
 
-    #---------------- ⌫ CLEANUP: -----------------
+    # ---------------- ⌫ CLEANUP: -----------------
     # (API) Delete item (job)
     API.delete_item(item_name)
 

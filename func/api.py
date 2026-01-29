@@ -43,8 +43,8 @@ class APIintercept:
 
 
 class API:
-    #======================= Users =======================
-    #-------------------- Create user --------------------
+    # ======================= Users =======================
+    # -------------------- Create user --------------------
     # Create user
     @staticmethod
     def create_user(
@@ -66,7 +66,7 @@ class API:
             }
         )
 
-    #-------------------- Delete user --------------------
+    # -------------------- Delete user --------------------
     # Delete user by username
     @staticmethod
     def delete_user(username: str):
@@ -75,8 +75,8 @@ class API:
             auth=(Base.USERNAME, Base.API_TOKEN)
         )
 
-    #==================== Items (Jobs) ===================
-    #-------------- Create item (All-in-One) -------------
+    # ==================== Items (Jobs) ===================
+    # -------------- Create item (All-in-One) -------------
     @staticmethod
     def create_item(
             item_type: str = Fake.random_item_type,
@@ -102,7 +102,7 @@ class API:
             }
         )
 
-    #-------------- Create item (by Type) --------------
+    # -------------- Create item (by Type) --------------
     # Create Pipeline
     @staticmethod
     def create_pipeline(item_name: str = Fake.item_name):
@@ -151,7 +151,7 @@ class API:
             }
         )
 
-    #------------------ Delete items -----------------
+    # ------------------ Delete items -----------------
     # Delete item (job) by nane
     @staticmethod
     def delete_item(item_name: str):

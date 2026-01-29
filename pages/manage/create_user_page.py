@@ -8,15 +8,15 @@ from data.generators import Fake
 
 #=======================================================================================================================
 class CreateUserPage(BasePage):
-    #------------------ 𝌆 DATA: ------------------
+    # ------------------ 𝌆 DATA: ------------------
     ENDPOINT = '/manage/securityRealm/addUser'
     TITLE_TEXT = 'Create User - Jenkins'
     HEADER_TEXT = 'Create User'
 
-    #------------- 🅔 DATA (Errors): --------------
+    # ------------- 🅔 DATA (Errors): --------------
     PASSWORD_ERROR_TEXT = ["Password didn't match", "Password didn't match"]
 
-    #---------------- ㉧ LOCATORS: ----------------
+    # ---------------- ㉧ LOCATORS: ----------------
     # -User data fields-
     @property
     def username_field(self):

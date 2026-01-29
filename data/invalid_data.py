@@ -6,26 +6,26 @@ from data.base_data import Base
 
 #=======================================================================================================================
 class Invalid:
-    #----------------------- Base URL ---------------------
+    # ----------------------- Base URL ---------------------
     URL_EMPTY = ''                                                # Empty
     URL_SPACE = ' '                                               # Space only
     URL = 'http://incorrect_url'
 
-    #-------------- Admin data (Credentials) --------------
+    # -------------- Admin data (Credentials) --------------
     # Username
     USERNAME = 'WrongUsername'                                    # Invalid username
-    USERNAME = ''                                                 # <>
+    USERNAME_EMPTY = ''                                           # <>
     USERNAME_SPACE = ' '                                          # < >
     USERNAME_SPACE_END = Base.USERNAME + ' '                      # <Username >
     USERNAME_SPACE_BEGIN = ' ' + Base.USERNAME                    # < Username>
 
-    #----------------------- Password ---------------------
+    # ----------------------- Password ---------------------
     PASSWORD = 'Wrong_Password_135'                               # Invalid Password
     PASSWORD_EMPTY = ''                                           # <>
     PASSWORD_SPACE = ' '                                          # < >
     PASSWORD_123 = '123'                                          # <123>
 
-    #------------------- Confirm password -----------------
+    # ------------------- Confirm password -----------------
     CONFIRM_PASSWORD = 'Wrong_confirm_password_135'               # Invalid confirm password
     CONFIRM_PASSWORD_EMPTY = ''                                   # <>
     CONFIRM_PASSWORD_SPACE = ' '                                  # < >
@@ -34,7 +34,7 @@ class Invalid:
     CONFIRM_PASSWORD_SPACES = ' ' + Base.PASSWORD + ' '           # <  Valid_Password  >
 
 
-    #----------------------- API token --------------------
+    # ----------------------- API token --------------------
     TOKEN_WRONG = '11aaa1a1a1a1a1a1a1aaa111111aa1111a'            # Invalid token
     TOKEN_EMPTY = ''                                              # <>
     TOKEN_SPACE = ' '                                             # < >
@@ -42,7 +42,7 @@ class Invalid:
     TOKEN_SPACE_BEGIN = ' ' + Base.API_TOKEN                      # <  Valid_API_token>
     TOKEN_SPACES = ' ' + Base.API_TOKEN + ' '                     # <  Valid_API_token  >
 
-    #----------------------- Email ------------------------
+    # ----------------------- Email ------------------------
     EMAIL_EMPTY = ''                                              # <>
     EMAIL_NO_AT_SIGN = 'no_at_sign_email.com'                     # <no_at_sign_email.com>
     EMAIL_NO_DOT = 'no_dot_emailcom'                              # <no_dot_emailcom>
@@ -53,6 +53,6 @@ class Invalid:
     EMAIL_SPACE_IN = 'space in@email.com'                         # <space in@email.com>
 
 
-    # Items
+    # ------------------------ Items ------------------------
     ITEM_NAME_EMPTY = ''                                          # Empty
     ITEM_NAME = 'Invalid_item_name_#'                             # Non accessible symbol <#>

@@ -6,12 +6,12 @@ from pages.base_page import BasePage
 
 #=======================================================================================================================
 class MainPage(BasePage):
-    #------------------ 𝌆 DATA: ------------------
+    # ------------------ 𝌆 DATA: ------------------
     ENDPOINT = '/'
     TITLE_TEXT = 'Dashboard - Jenkins'
     DEFAULT_HEADER_TEXT = 'Welcome to Jenkins!'                                   # When NO items (jobs)
 
-    #---------------- ㉧ LOCATORS: ----------------
+    # ---------------- ㉧ LOCATORS: ----------------
     @property
     # -Header-
     def default_header(self):

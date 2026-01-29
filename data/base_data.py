@@ -21,7 +21,7 @@ class Base:
 
 
 #===================================================== ↕ API DATA ======================================================
-    #----------------- Endpoints ---------------
+    # ----------------- Endpoints ---------------
     # Users endpoints
     CREATE_USER_ENDPOINT = f'/securityRealm/createAccountByAdmin'
     DELETE_USER_ENDPOINT = lambda username: f'/user/{username}/doDelete'

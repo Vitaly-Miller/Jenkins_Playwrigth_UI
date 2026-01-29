@@ -7,21 +7,21 @@ from playwright.sync_api import expect
 
 #=======================================================================================================================
 def test_fill_description(page):
-    #-------------- ⧈ PAGE OBJECTS: --------------
+    # -------------- ⧈ PAGE OBJECTS: --------------
     main_page = MainPage(page)
 
-    #-------------- ⏎ DATA (input): --------------
+    # -------------- ⏎ DATA (input): --------------
     description_text = 'My test description text - 1234567890!'
 
-    #---------------- ▶︎ ACTIONS: -----------------
+    # ---------------- ▶︎ ACTIONS: -----------------
     main_page.open()                                            # Open <Main> page (Dashboard)                           http://localhost:8080/
     main_page.add_description(description_text)                 # ✨Open description form and fill text
 
-    #------------- ✔︎ EXPECTATIONS: ---------------
+    # ------------- ✔︎ EXPECTATIONS: ---------------
     # Текст появился в заголовке страницы
     expect(main_page.description_header, f'❌Wrong description header!').to_have_text(description_text)
 
-    #---------------- ⌫ CLEANUP: -----------------
+    # ---------------- ⌫ CLEANUP: -----------------
     # Clear description field
     main_page.clear_description()
 

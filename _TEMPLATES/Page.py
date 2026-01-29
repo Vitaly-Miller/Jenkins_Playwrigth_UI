@@ -6,14 +6,14 @@ from pages.base_page import BasePage
 
 #=======================================================================================================================
 class NewPage(BasePage):
-    #------------------ 𝌆 DATA: ------------------
+    # ------------------ 𝌆 DATA: ------------------
     ENDPOINT = ''
     TITLE_TEXT = ''
     HEADER_TEXT = ''
 
-    #------------- 🅔 DATA (Errors): --------------
+    # ------------- 🅔 DATA (Errors): --------------
 
-    #---------------- ㉧ LOCATORS: ----------------
+    # ---------------- ㉧ LOCATORS: ----------------
     # -Buttons-
     @property
     def xxx_btn(self):
@@ -28,4 +28,3 @@ class NewPage(BasePage):
     """ Open <New> page """
     def open_page(self):
         return self.open(self.ENDPOINT)                 # -→ <New> page                                                  https://website.com/=NEW_PAGE=
-

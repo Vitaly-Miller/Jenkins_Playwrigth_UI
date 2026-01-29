@@ -6,7 +6,7 @@ from pages.base_page import BasePage
 
 #=======================================================================================================================
 class ItemPage(BasePage):
-    #------------------ 𝌆 DATA: ------------------
+    # ------------------ 𝌆 DATA: ------------------
     @staticmethod
     def endpoint(item_name: str):
         return f'/view/all/job/{item_name}/'
@@ -17,7 +17,7 @@ class ItemPage(BasePage):
     def header_text(item_name: str):
         return item_name
 
-    #---------------- ㉧ LOCATORS: ----------------
+    # ---------------- ㉧ LOCATORS: ----------------
     # -Headers-
     def header(self, item_name: str):
         return self.page.get_by_role('heading', name=item_name)

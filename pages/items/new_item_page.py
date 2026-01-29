@@ -7,7 +7,7 @@ from data.generators import Fake
 
 #=======================================================================================================================
 class NewItemPage(BasePage):
-    #------------------ 𝌆 DATA: ------------------
+    # ------------------ 𝌆 DATA: ------------------
     ENDPOINT = '/view/all/newJob'
     TITLE_TEXT = 'New Item - Jenkins'
     HEADER_TEXT = 'New Item'
@@ -17,7 +17,7 @@ class NewItemPage(BasePage):
     INVALID_ITEM_NAME_ERROR_TEXT = 'is an unsafe character'                     # use <.to_contain_text>
     EXIST_ITEM_MANE_ERROR_TEXT = 'A job already exists with the name'           # use <.to_contain_text>
 
-    #---------------- ㉧ LOCATORS: ----------------
+    # ---------------- ㉧ LOCATORS: ----------------
     # -Fields-
     @property
     def enter_item_name_field(self):
@@ -51,7 +51,7 @@ class NewItemPage(BasePage):
     #===================================================== ✨HELPERS ===================================================
     """ Open <New Item> page """
     def open(self):
-        self.open_page(self.ENDPOINT)                          # Open <New Item> page                                      http://localhost:8080/view/all/newJob
+        self.open_page(self.ENDPOINT)                          # Open <New Item> page                                    http://localhost:8080/view/all/newJob
 
     # CREATE ITEMS (by Types): (⚠️ Don't forget open page)
     """ Create Freestyle project """

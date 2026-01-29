@@ -6,12 +6,12 @@ from pages.base_page import BasePage
 
 #=======================================================================================================================
 class ManageJenkinsPage(BasePage):
-    #------------------ 𝌆 DATA: ------------------
+    # ------------------ 𝌆 DATA: ------------------
     ENDPOINT = '/manage/'
     TITLE_TEXT = 'Manage Jenkins - Jenkins'
     HEADER_TEXT = 'Manage Jenkins'
 
-    #---------------- ㉧ LOCATORS: ----------------
+    # ---------------- ㉧ LOCATORS: ----------------
     # -Security panel-
     @property
     def users_link(self):

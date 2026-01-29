@@ -9,14 +9,14 @@ from playwright.sync_api import expect
 
 #=======================================================================================================================
 def test_create_item_existing_name_error(page):
-    #-------------- ⧈ PAGE OBJECTS: ---------------
+    # -------------- ⧈ PAGE OBJECTS: ---------------
     main_page = MainPage(page)
     new_item_page = NewItemPage(page)
 
-    #-------------- ⏎ DATA (input): ---------------
+    # -------------- ⏎ DATA (input): ---------------
     item_name = 'Test_Item_Name'
 
-    #-------------- ◁ PRECONDITION: ---------------
+    # -------------- ◁ PRECONDITION: ---------------
     # API Create Freestyle project
     API.create_freestyle_project(item_name)
 
@@ -32,7 +32,7 @@ def test_create_item_existing_name_error(page):
     ok_btn = new_item_page.ok_btn
     text_color = new_item_page.ERROR_TEXT_COLOR_RED
 
-    #-------------- ✔︎ EXPECTATIONS: ---------------
+    # -------------- ✔︎ EXPECTATIONS: ---------------
     # Error appears
     expect(error_msg, '❌Error message did NOT appear!').to_be_visible()
     # Error text content
@@ -42,7 +42,7 @@ def test_create_item_existing_name_error(page):
     # <OK> button is disable
     expect(ok_btn, '❌<OK> button is enable!').to_be_disabled()
 
-    #----------------- ⌫ CLEANUP: -----------------
+    # ----------------- ⌫ CLEANUP: -----------------
     # (API) Delete all items
     API.delete_all_items()
 

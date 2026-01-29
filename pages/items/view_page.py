@@ -6,7 +6,7 @@ from pages.base_page import BasePage
 
 #=======================================================================================================================
 class ViewPage(BasePage):
-    #------------------ 𝌆 DATA: ------------------
+    # ------------------ 𝌆 DATA: ------------------
     @staticmethod
     def endpoint(item_name: str, view_name: str):
         return f'/job/{item_name}/view/{view_name}/'                      # /job/Item-1/view/View-1/
@@ -17,7 +17,7 @@ class ViewPage(BasePage):
     def header_text(item_name: str):
         return f'{item_name}'                                             # Item-1
 
-    #---------------- ㉧ LOCATORS: ----------------
+    # ---------------- ㉧ LOCATORS: ----------------
     # -Header-
     @property
     def header(self):

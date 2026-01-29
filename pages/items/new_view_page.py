@@ -6,7 +6,7 @@ from pages.base_page import BasePage
 
 #=======================================================================================================================
 class NewViewPage(BasePage):
-    #------------------ 𝌆 DATA: ------------------
+    # ------------------ 𝌆 DATA: ------------------
     @staticmethod
     def endpoint(item_name: str):
         return f'/view/all/job/{item_name}/newView'
@@ -14,10 +14,10 @@ class NewViewPage(BasePage):
     TITLE_TEXT = 'New View - Jenkins'
     HEADER_TEXT = ''
 
-    #------------- 🅔 DATA (Errors): --------------
+    # ------------- 🅔 DATA (Errors): --------------
 
 
-    #---------------- ㉧ LOCATORS: ----------------
+    # ---------------- ㉧ LOCATORS: ----------------
     # -Buttons-
     @property
     def create_btn(self):

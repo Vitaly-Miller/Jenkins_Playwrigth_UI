@@ -6,12 +6,12 @@ from pages.base_page import BasePage
 
 #=======================================================================================================================
 class UserDatabasePage(BasePage):
-    #------------------ 𝌆 DATA: ------------------
+    # ------------------ 𝌆 DATA: ------------------
     ENDPOINT = '/manage/securityRealm/'
     TITLE_TEXT = 'Users - Jenkins'
     HEADER_TEXT = 'Users'
 
-    #---------------- ㉧ LOCATORS: ----------------
+    # ---------------- ㉧ LOCATORS: ----------------
     # -Users table-
     @property
     def users_table(self):

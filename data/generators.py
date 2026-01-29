@@ -19,13 +19,13 @@ random_type = random.choice(
 
 
 class Fake:
-    #---------- User data (credentials): ----------
+    # ---------- User data (credentials): ----------
     username = f'Username-{random_10_99}'                                             # Username-58
     user_password = fake.password()                                                   #
     user_full_name = fake.name()                                                      # John Connor
     user_email = fake.email()                                                         # john.connor@example.com
 
-    #------------------ Items: --------------------
+    # ------------------ Items: --------------------
     item_name = f'Item-{random_10_99}'                                                # Item-43
     random_item_type = random_type
 

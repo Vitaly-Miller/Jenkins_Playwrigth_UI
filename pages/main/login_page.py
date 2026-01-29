@@ -7,12 +7,12 @@ from data.base_data import Base
 
 #=======================================================================================================================
 class LoginPage(BasePage):
-    #------------------ 𝌆 DATA: ------------------
+    # ------------------ 𝌆 DATA: ------------------
     ENDPOINT = '/login'
     TITLE_TEXT = 'Sign in - Jenkins'
     HEADER_TEXT = 'Sign in to Jenkins'
 
-    #---------------- ㉧ LOCATORS: ----------------
+    # ---------------- ㉧ LOCATORS: ----------------
     # -Fields-
     @property
     def username_field(self):

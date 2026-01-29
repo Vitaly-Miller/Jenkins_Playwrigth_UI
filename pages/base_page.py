@@ -9,12 +9,12 @@ class BasePage:
     def __init__(self, page: Page):
         self.page = page
 
-    #------------------ 𝌆 DATA: ------------------
+    # ------------------ 𝌆 DATA: ------------------
     EDIT_DESCRIPTION_BTN_TEXT = 'Edit description'
     SAVE_DESCRIPTION_BTN_TEXT = 'Save'
     CANCEL_DESCRIPTION_BTN_TEXT = 'Cancel'
 
-    #---------------- ㉧ LOCATORS: ----------------
+    # ---------------- ㉧ LOCATORS: ----------------
     # -Panels-
     # --Main panel--
     @property
