@@ -12,6 +12,10 @@ class ManageJenkinsPage(BasePage):
     HEADER_TEXT = 'Manage Jenkins'
 
     #---------------- ㉧ LOCATORS: ----------------
+    # -Security panel-
+    @property
+    def users_link(self):
+        return self.page.get_by_text('Users', exact=True)
 
 
     #===================================================== ✨HELPERS ===================================================

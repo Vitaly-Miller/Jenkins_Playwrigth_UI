@@ -16,7 +16,7 @@ def test_cancel_delete_user(page):
 
     #-------------- ◁ PRECONDITION: -------------
     # Create User (Fake data)
-    user_database_page.open()                        # Open <Jenkins’ own User Database> page (Table)                      http://localhost:8080/manage/securityRealm
+    user_database_page.open()                        # Open <Jenkins’ own User Database> page (Table)                    http://localhost:8080/manage/securityRealm
     user_database_page.create_user_btn.click()       # Click <Create User> button> -→ <Create User> page                 http://localhost:8080/manage/securityRealm/addUser
     create_user_page.fill_user_data_fields()         # ✨Fill User data fields -→ <Jenkins’ own User Database> page      http://localhost:8080/manage/securityRealm
 

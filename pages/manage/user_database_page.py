@@ -25,8 +25,8 @@ class UserDatabasePage(BasePage):
     # -Table elements-
     def table_user_id(self, username: str):
         return self.page.locator(f'td > a[href="user/{username.lower()}/"]')
-    def table_user_name(self, user_name: str):
-        return self.page.locator(f'//td[normalize-space()="{user_name}"]')
+    def table_user_name(self, user_full_name: str):
+        return self.page.locator(f'//td[normalize-space()="{user_full_name}"]')
 
     # --Table User ID Dropdown menu--
     def user_dropdown_menu_chevron(self, username: str):

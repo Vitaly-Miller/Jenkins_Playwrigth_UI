@@ -10,11 +10,11 @@ from func.api import API
 
 #=======================================================================================================================
 def test_create_user(page):
-    #-------------- ⧈ PAGE OBJECTS: --------------
+    # -------------- ⧈ PAGE OBJECTS: --------------
     user_database_page = UserDatabasePage(page)
     create_user_page = CreateUserPage(page)
 
-    #-------------- ⏎ DATA (input): --------------
+    # -------------- ⏎ DATA (input): --------------
     username = Fake.username
     user_full_name = Fake.user_full_name
 
@@ -27,13 +27,13 @@ def test_create_user(page):
     table_user_id = user_database_page.table_user_id(username)
     table_user_name = user_database_page.table_user_name(user_full_name)
 
-    #------------- ✔︎ EXPECTATIONS: ---------------
-    # Created <Username> появился в таблице (User ID)
-    expect(table_user_id, f'❌User "{username}" not found!').to_have_text(username)
-    # Created <User Name> появился в таблице (Full Name)
-    expect(table_user_name, f'❌Incorrect User Full Name!').to_have_text(user_full_name)
+    # ------------- ✔︎ EXPECTATIONS: ---------------
+    # The created User ID appeared in the table
+    expect(table_user_id, f'❌User ID "{username}" not found!').to_have_text(username)
+    # The created User Full name appeared in the table
+    expect(table_user_name, f'❌User Full Name "{user_full_name}" not found!').to_have_text(user_full_name)
 
-    #---------------- ⌫ CLEANUP: -----------------
+    # ---------------- ⌫ CLEANUP: -----------------
     # Delete created User
     user_database_page.delete_user(username)
     # (API) Delete created User (optional)

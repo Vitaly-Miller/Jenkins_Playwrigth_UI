@@ -11,7 +11,6 @@ from func.api import API
 
 #=======================================================================================================================
 def test_create_multi_configuration_project(page):
-
     #-------------- ⧈ PAGE OBJECTS: --------------
     main_page = MainPage(page)
     new_item_page = NewItemPage(page)
@@ -32,6 +31,7 @@ def test_create_multi_configuration_project(page):
     #------------- ✔︎ EXPECTATIONS: ---------------
     # Созданный Item появился в таблице
     expect(table_item_name, f'❌Item "{item_name}" not found on the Dashboard table!').to_have_text(item_name)
+
     #---------------- ⌫ CLEANUP: -----------------
     # (API) Delete item (job)
     API.delete_item(item_name)

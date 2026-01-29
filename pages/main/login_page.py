@@ -15,7 +15,7 @@ class LoginPage(BasePage):
     #---------------- ㉧ LOCATORS: ----------------
     # -Fields-
     @property
-    def user_name_field(self):
+    def username_field(self):
         return self.page.locator('#j_username')
     @property
     def password_field(self):
@@ -42,7 +42,7 @@ class LoginPage(BasePage):
             password: str = Base.PASSWORD
     ):
         self.open()                                               # Open <Login> page                                    http://localhost:8080/login
-        self.user_name_field.fill(username)                       # Fill username field
+        self.username_field.fill(username)                       # Fill username field
         self.password_field.fill(password)                        # Fill password field
         self.keep_signed_checkbox.click()                         # Checkbox "Keep me signed in" (optional)
         self.sign_in_btn.click()                                  # Click <Sign in> button -→ <Main> page (Dashboard)    http://localhost:8080
