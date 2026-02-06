@@ -23,11 +23,11 @@ class Base:
 #===================================================== ↕ API DATA ======================================================
     # ----------------- Endpoints ---------------
     # Users endpoints
-    CREATE_USER_ENDPOINT = f'/securityRealm/createAccountByAdmin'
+    CREATE_USER_ENDPOINT = '/securityRealm/createAccountByAdmin'
     DELETE_USER_ENDPOINT = lambda username: f'/user/{username}/doDelete'
 
     # Items endpoints
-    CREATE_ITEM_ENDPOINT = f'/view/all/createItem'
+    CREATE_ITEM_ENDPOINT = '/view/all/createItem'
     DELETE_ITEM_ENDPOINT = lambda item_name: f'/job/{item_name}/doDelete'
 
 

@@ -1,6 +1,6 @@
 """
 BASE page
-(common elements)
+(Common elements)
 """
 from playwright.sync_api import Page
 
@@ -15,72 +15,88 @@ class BasePage:
     CANCEL_DESCRIPTION_BTN_TEXT = 'Cancel'
 
     # ---------------- ㉧ LOCATORS: ----------------
-    # -Panels-
-    # --Main panel--
+    # -⬆ ︎Nav bar-
     @property
-    def main_panel(self):
-        return self.page.locator('#main-panel')
-
-    # --︎Top panel (header)--
-    @property
-    def top_panel(self):
+    def nav_bar(self):
         return self.page.locator('#page-header')
     @property
-    def logo_btn(self):
-        return self.page.locator('.app-jenkins-logo')                                  # -→ <Main> page (Dashboard)      http://localhost:8080/
+    def breadcrumb_bar(self):
+        return self.page.locator('#breadcrumbBar')
     @property
     def breadcrumbs(self):
         return self.page.locator('li.jenkins-breadcrumbs__list-item')
+    # --Buttons--
+    @property
+    def logo_btn(self):
+        return self.page.locator('.app-jenkins-logo')                           # -→ <Main> page (Dashboard)            http://localhost:8080/
     @property
     def manage_jenkins_btn(self):
-        return self.page.get_by_role('link', name='Manage Jenkins')               # -→ <Manage Jenkins> page        http://localhost:8080/manage
+        return self.page.get_by_role('link', name='Manage Jenkins')        # -→ <Manage Jenkins> page              http://localhost:8080/manage
 
-    # --Left side panel--
+    # -⬅︎ Left side panel-
     @property
     def left_panel(self):
         return self.page.locator('#side-panel')
     @property
-    def status_btn(self):
+    def status_link(self):
         return self.page.get_by_role('link', name='Status', exact=True)
     @property
-    def changes_btn(self):
+    def changes_link(self):
         return self.page.get_by_role('link', name='Changes')
     @property
-    def configure_btn(self):
+    def configure_link(self):
         return self.page.get_by_role('link', name='Configure')
     @property
-    def new_item_btn(self):
+    def new_item_link(self):
         return self.page.get_by_role('link', name='New Item')
     @property
-    def delete_item_btn(self):
+    def delete_item_link(self):
         return self.page.locator('[class="icon-edit-delete icon-md"]')                 # 🗑️ (by icon)
     @property
     def delete_item_confirm_yes_btn(self):
         return self.page.locator('button[data-id="ok"]')
     @property
-    def build_history_btn(self):
+    def build_history_link(self):
         return self.page.get_by_role('link', name='Build History')
+    # --Rename--
     @property
-    def rename_btn(self):
+    def rename_link(self):
         return self.page.get_by_role('link', name='Rename')
     @property
-    def credentials_btn(self):
+    def new_name_field(self):
+        return self.page.locator('input[name="newName"]')
+    @property
+    def rename_button(self):
+        return self.page.get_by_role('button', name="Rename")
+
+    @property
+    def credentials_link(self):
         return self.page.get_by_role('link', name='Credentials')
     @property
-    def move_btn(self):
+    def move_link(self):
         return self.page.get_by_role('link', name='Move')
     @property
-    def stages_btn(self):
+    def stages_link(self):
         return self.page.get_by_role('link', name='Stages')
     @property
-    def build_now(self):
+    def build_link(self):
         return self.page.get_by_role('link', name='Build Now')
     @property
-    def build_executor_status_btn(self):
+    def build_executor_status_link(self):
         return self.page.get_by_role('link', name='Build Executor Status', exact=True)
     @property
-    def pipeline_syntax_btn(self):
+    def pipeline_syntax_link(self):
         return self.page.get_by_role('link', name='Pipeline Syntax')
+
+    # ⧈ Main panel (center)
+    @property
+    def main_panel(self):
+        return self.page.locator('#main-panel')
+
+    # ⬇︎ Footer panel
+    def footer(self):
+        return self.page.locator('#footer')
+
 
     # -Tab bar-
     @property
@@ -90,10 +106,6 @@ class BasePage:
     def new_view_btn(self):
         return self.page.get_by_role('link', name='New View')              # -→ <New View> page                     http://localhost:8080/newView
 
-    # --Footer panel--
-    @property
-    def footer_panel(self):
-        return self.page.locator('#footer')
 
     # -Description-
     @property

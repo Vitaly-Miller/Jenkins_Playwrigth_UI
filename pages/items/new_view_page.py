@@ -21,7 +21,7 @@ class NewViewPage(BasePage):
     # -Buttons-
     @property
     def create_btn(self):
-        return self.page.get_by_role("button", name="Create")
+        return self.page.get_by_role('button', name='Create')
 
     # -Fields-
     @property

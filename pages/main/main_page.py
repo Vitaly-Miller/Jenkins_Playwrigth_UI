@@ -18,8 +18,13 @@ class MainPage(BasePage):
         return self.page.get_by_role("heading", name='Welcome to Jenkins!')  # When NO items (jobs)
 
     # -Table-
-    def table_item_name_link(self, item_mame: str):
-        return self.page.locator(f'span:has-text("{item_mame}")')                 # Open existing Item page              http://localhost:8080/view/all/job/=ITEM_NAME=
+    def table_item_name_link(self, item_name: str):
+        return self.page.locator(f'span:has-text("{item_name}")')                 # Open existing Item page              http://localhost:8080/view/all/job/=ITEM_NAME=
+
+
+    # --Item table Dropdown menu--
+    def item_dropdown_menu_chevron(self, item_name: str):
+        return self.page.locator(f'[data-href$="/job/{item_name}/"]')
 
 
     #===================================================== ✨HELPERS ===================================================

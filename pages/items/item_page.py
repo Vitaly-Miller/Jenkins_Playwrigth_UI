@@ -22,7 +22,10 @@ class ItemPage(BasePage):
     def header(self, item_name: str):
         return self.page.get_by_role('heading', name=item_name)
 
-    # -Buttons-
+    # -Fields-
+
+
+    # Buttons
 
 
     #===================================================== ✨HELPERS ===================================================
@@ -32,5 +35,5 @@ class ItemPage(BasePage):
 
     """ Delete Item by left panel """
     def delete_item_by_left_panel(self):
-        self.delete_item_btn.click()                          # Click <Delete Item> button on the Left side panel
+        self.delete_item_link.click()                         # Click <Delete Item> link on the Left side panel
         self.delete_item_confirm_yes_btn.click()              # Click <Yes> dialog button -→ Confirm deletion
