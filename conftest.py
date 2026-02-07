@@ -94,9 +94,30 @@ def cookies(playwright: Playwright):
 
 
 #================================================ API-fixtures (Pre-test) ==============================================
-""" Delete ALL items (jobs) before test """
+# ------------ Create items ------------
+""" Create Pipeline """
+@pytest.fixture
+def api_create_pipeline():
+    API.create_pipeline()
+
+""" Create Freestyle project """
+@pytest.fixture
+def api_create_freestyle_project():
+    API.create_freestyle_project()
+
+""" Create Multi-configuration project """
+@pytest.fixture
+def api_create_multi_configuration_project():
+    API.create_multi_configuration_project()
+
+""" Create Folder """
+@pytest.fixture
+def api_create_folder():
+    API.create_pipeline()
+
+# ------------- Delete items -------------
+""" Delete ALL items (jobs) """
 @pytest.fixture
 def api_delete_all_items():
     API.delete_all_items()
-
 #-----------------------------------------------------------------------------------------------------------------------

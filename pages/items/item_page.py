@@ -22,11 +22,6 @@ class ItemPage(BasePage):
     def header(self, item_name: str):
         return self.page.get_by_role('heading', name=item_name)
 
-    # -Fields-
-
-
-    # Buttons
-
 
     #===================================================== ✨HELPERS ===================================================
     """ Open <Item> page """

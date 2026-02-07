@@ -19,9 +19,9 @@ def test_rename_folder_non_pom(page: Page):
     sign_in_btn = page.locator('button[name="Submit"]')
 
     # ⚠️Admin credentials:
-    admin_username = 'Vitaly_Miller'                          # Admin username
+    admin_username = 'Test_Username'                          # Admin username
     admin_password = 'test_Pass_123'                          # Admin password
-    admin_api_token = '11baf1d6f2b5f2a3d4eaa977191ae9117e'    # Admin API token
+    admin_api_token = '11baf1d6f2b5f2a3d4eaa977191ae91155'    # Admin API token
 
     # Fill page fields with admin credentials:
     admin_username_field.fill(admin_username)                 # Enter Admin username

@@ -16,8 +16,6 @@ random_type = random.choice(
      'folder'
      ])
 
-
-
 class Fake:
     # ---------- User data (credentials): ----------
     username = f'Username-{random_10_99}'                                             # Username-58

@@ -27,7 +27,7 @@ class MainPage(BasePage):
         return self.page.locator(f'[data-href$="/job/{item_name}/"]')
 
 
-    #===================================================== ✨HELPERS ===================================================
+    #==================================== ✨HELPERS ===================================================
     """ Open <Main> page (Dashboard) """
     def open(self):
         self.open_page(self.ENDPOINT)                                             # Open <Main> page (Dashboard)         http://localhost:8080/

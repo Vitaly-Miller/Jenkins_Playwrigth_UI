@@ -108,7 +108,7 @@ def test_create_user_non_pom(page: Page):
     dropdown_menu_delete_btn.click()                          # Click <Delete> button
     delete_yes_bnt.click()                                    # Click <Yes> button (Confirm deletion)
 
-    # ******** (API) Delete created User (optional) ********
+    # (API) Delete created User (optional)
     requests.post(
         url=f'http://localhost:8080/user/{username}/doDelete',
         auth=(admin_username, api_token)

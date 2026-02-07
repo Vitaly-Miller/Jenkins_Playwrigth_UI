@@ -28,7 +28,7 @@ class BasePage:
     # --Buttons--
     @property
     def logo_btn(self):
-        return self.page.locator('.app-jenkins-logo')                           # -→ <Main> page (Dashboard)            http://localhost:8080/
+        return self.page.locator('.app-jenkins-logo')                           # -→ <Main> page (Dashboard)             http://localhost:8080/
     @property
     def manage_jenkins_btn(self):
         return self.page.get_by_role('link', name='Manage Jenkins')        # -→ <Manage Jenkins> page              http://localhost:8080/manage

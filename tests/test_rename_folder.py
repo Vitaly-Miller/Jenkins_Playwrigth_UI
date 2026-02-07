@@ -28,7 +28,7 @@ def test_rename_folder(page):
     main_page.rename_link.click()                           # Click <Rename> link -→ open <Rename> page                  http://localhost:8080/job/=ITEM_NAME=/confirm-rename
     item_page.new_name_field.clear()                        # Clear an old folder name
     item_page.new_name_field.fill(item_name_new)            # Enter a new name
-    item_page.rename_button.click()                         # Click <Rename> button -→ open folder page                       http://localhost:8080/job/=NEW_ITEM_NAME=/
+    item_page.rename_button.click()                         # Click <Rename> button -→ open folder page                  http://localhost:8080/job/=NEW_ITEM_NAME=/
 
     # ---------------- 𝌮 VARIABLES: -----------------
     item_page_header = item_page.header(item_name_new)

@@ -35,14 +35,14 @@ class LoginPage(BasePage):
     def open(self):
         self.open_page(self.ENDPOINT)                             # Open <Login> page                                    http://localhost:8080/login
 
-    """ Log in (Authorization) on the Login Page """              # Admin data by Default
+    """ Authorization (Log in) """                                # Admin data by Default
     def user_log_in(
             self,
             username: str = Base.USERNAME,
             password: str = Base.PASSWORD
     ):
         self.open()                                               # Open <Login> page                                    http://localhost:8080/login
-        self.username_field.fill(username)                       # Fill username field
+        self.username_field.fill(username)                        # Fill username field
         self.password_field.fill(password)                        # Fill password field
         self.keep_signed_checkbox.click()                         # Checkbox "Keep me signed in" (optional)
         self.sign_in_btn.click()                                  # Click <Sign in> button -→ <Main> page (Dashboard)    http://localhost:8080
