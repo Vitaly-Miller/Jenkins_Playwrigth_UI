@@ -2,8 +2,6 @@
 Created Pipeline is visible on Dashboard
 TC_00_000_00
 """
-from time import sleep
-
 from pages.main.main_page import MainPage
 from pages.items.new_item_page import NewItemPage
 from pages.items.item_configuration_general_page import ConfigurationGeneralPage

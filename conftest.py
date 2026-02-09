@@ -10,7 +10,7 @@ from func.api import API
 #===================================================== Playwright ======================================================
 """ Page + Storage State 🗄️ """
 @pytest.fixture
-def page(playwright: Playwright, storage_state):            # User Log in and storage_state / cookies - доп. фикстура
+def page(playwright: Playwright, storage_state):            # User Log in + фикстура storage_state
     browser = playwright.chromium.launch(                   # Запуск движка браузера с параметрами:
         channel='chromium',                                 # - UI оболочка: 'chromium', 'chrome', 'opera'
         headless=False,                                     # - False → показывать браузер
@@ -23,7 +23,7 @@ def page(playwright: Playwright, storage_state):            # User Log in and st
         storage_state=storage_state                         # - storage_state 🗄️- Авторизация (cookies + localStorage)
 
     )
-    #context.add_cookies(cookies)                           # cookies 🍪(Не использую. Использую - storage_state ⬆︎)
+    #context.add_cookies(cookies)                           # 👈cookies 🍪(НЕ использую. Использую - storage_state ⬆︎)
     page = context.new_page()                               # Создание вкладки (страницы)
     page.set_default_timeout(5_000)                         # Fail default timeout (ms)
     yield page                                              # Возвращает объект Page в тест

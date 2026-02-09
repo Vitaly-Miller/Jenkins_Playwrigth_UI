@@ -34,8 +34,10 @@ def test_rename_folder(page):
     item_page_header = item_page.header(item_name_new)
 
     # --------------- ✔︎ EXPECTATIONS: ---------------
+    # An item page header is visible
+    expect(item_page_header, f'❌Item new name is NOT visible!').to_be_visible()
     # An item page header has a correct New folder name
-    expect(item_page_header, f'❌Wrong item NEW name').to_have_text(item_name_new)
+    expect(item_page_header, f'❌Wrong item new name!').to_have_text(item_name_new)
 
     # ------------------ ⌫ CLEANUP: ------------------
     API.delete_item(item_name_new)                         # Delete folder after test (API)

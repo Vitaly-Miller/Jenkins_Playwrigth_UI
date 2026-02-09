@@ -20,15 +20,14 @@ class ConfigurationGeneralPage(BasePage):
                  return ...
         """
     # ------------------ 𝌆 DATA: ------------------
+    HEADER_TEXT = 'General'
     @staticmethod
     def endpoint(item_name: str):
         return f'/view/all/job/{item_name}/configure'
-
     @staticmethod
     def title_text(item_name: str):
         return f'{item_name} Config - Jenkins'
 
-    HEADER_TEXT = 'General'
     # ---------------- ㉧ LOCATORS: ----------------
     # - Texts -
     @property
@@ -52,7 +51,7 @@ class ConfigurationGeneralPage(BasePage):
     #================================================== ✨HELPERS ======================================================
     """ Open <Item Configuration - General> page """
     def open(self, item_name: str):
-        return self.open_page(self.endpoint(item_name))         # Open <Item Configuration - General> page                 http://localhost:8080/job/=ITEM_NAME=/configure
+        return self.open_page(self.endpoint(item_name))         # Open <Item Configuration - General> page               http://localhost:8080/job/=ITEM_NAME=/configure
 
     """ Fill Display name (Folder) """
     def fill_display_name(self, display_item_name: str):

@@ -23,6 +23,7 @@ class ItemPage(BasePage):
         return self.page.get_by_role('heading', name=item_name)
 
 
+
     #===================================================== ✨HELPERS ===================================================
     """ Open <Item> page """
     def open(self, item_name: str):
@@ -32,3 +33,5 @@ class ItemPage(BasePage):
     def delete_item_by_left_panel(self):
         self.delete_item_link.click()                         # Click <Delete Item> link on the Left side panel
         self.delete_item_confirm_yes_btn.click()              # Click <Yes> dialog button -→ Confirm deletion
+
+    

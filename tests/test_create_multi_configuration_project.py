@@ -30,7 +30,8 @@ def test_create_multi_configuration_project(page):
 
     # ------------- ✔︎ EXPECTATIONS: ---------------
     # Созданный Item появился в таблице
-    expect(table_item_name, f'❌Item "{item_name}" not found on the Dashboard table!').to_have_text(item_name)
+    expect(table_item_name,
+           f'❌Item "{item_name}" not found on the Dashboard table!').to_have_text(item_name)
 
     # ---------------- ⌫ CLEANUP: -----------------
     # (API) Delete item (job)
