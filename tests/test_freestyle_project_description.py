@@ -25,7 +25,7 @@ def test_freestyle_project_description(page):
 
     # ---------------- ▶︎ ACTIONS: ----------------
     main_page.open()                                                 # Open <Main> page                                  http://localhost:8080/
-    main_page.new_item_btn.click()                                   # Click <New Item> button -→ <New Item> page        http://localhost:8080/view/all/newJob
+    main_page.new_item_link.click()                                   # Click <New Item> button -→ <New Item> page       http://localhost:8080/view/all/newJob
     new_item_page.create_freestyle_project(item_name)                # ✨Create a Freestyle project -→ Config  page      http://localhost:8080/job/=FREESTYLE_PROJECT_NAME=/configure
     configuration_general_page.save_btn.click()                      # Click <Save> button -→ <Item> page                http://localhost:8080/job/=FREESTYLE_PROJECT_NAME=
     new_item_page.add_description(description_text)                  # ✨Add Description -→ <Item> page                  http://localhost:8080/job/=FREESTYLE_PROJECT_NAME=
