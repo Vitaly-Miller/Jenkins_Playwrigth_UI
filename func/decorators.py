@@ -12,9 +12,9 @@ from loguru import logger
 def check_time(func):
     @wraps(func)
     def wrapper(*args, **kwargs):
-        start_time = time.time()   # start |->
-        func(*args, **kwargs)      # func()
-        end_time = time.time()     # <-| end
+        start_time = time.time()      # start |->
+        func(*args, **kwargs)         # func()
+        end_time = time.time()        # <-| end
         print(f'Func "{func.__name__}" [⏱: {round((end_time - start_time), 3)} sec]')
     return wrapper
 
