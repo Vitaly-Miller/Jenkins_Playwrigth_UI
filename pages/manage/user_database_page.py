@@ -6,29 +6,29 @@ from pages.base_page import BasePage
 
 #=======================================================================================================================
 class UserDatabasePage(BasePage):
-    # ------------------ 𝌆 DATA: ------------------
+    # -------------------------------------------------- 𝌆 DATA --------------------------------------------------------
     ENDPOINT = '/manage/securityRealm/'
     TITLE_TEXT = 'Users - Jenkins'
     HEADER_TEXT = 'Users'
 
-    # ---------------- ㉧ LOCATORS: ----------------
-    # -Users table-
+    # ------------------------------------------------ ㉧ LOCATORS ------------------------------------------------------
+    # ---- Users table ----
     @property
     def users_table(self):
         return self.page.locator('#people')
 
-    # -Buttons-
+    # ---- Buttons -----
     @property
     def create_user_btn(self):
         return self.page.get_by_role("link", name="Create User")
 
-    # -Table elements-
+    # ---- Table elements -----
     def table_user_id(self, username: str):
         return self.page.locator(f'td > a[href="user/{username.lower()}/"]')
     def table_user_name(self, user_full_name: str):
         return self.page.locator(f'//td[normalize-space()="{user_full_name}"]')
 
-    # --Table User ID Dropdown menu--
+    # ---- Table User ID Dropdown menu ----
     def user_dropdown_menu_chevron(self, username: str):
         return self.page.locator(f'button[data-href$="user/{username.lower()}/"]')
     def dropdown_menu_delete_btn(self, username: str):
@@ -41,12 +41,12 @@ class UserDatabasePage(BasePage):
         return self.page.locator('button[data-id="cancel"]')
 
 
-    #===================================================== ✨HELPERS ===================================================
-    """ Open <Jenkins’ own User Database> page """
+    #================================================== ✨HELPERS ======================================================
+   # Open <Jenkins’ own User Database> page
     def open(self):
         self.open_page(self.ENDPOINT)                               # Open <Jenkins’ own user database> page             http://localhost:8080/manage/securityRealm
 
-    """ Delete User """
+    # Delete User
     def delete_user(self, username: str):
         self.user_dropdown_menu_chevron(username).click()           # Open user dropdown menu
         self.dropdown_menu_delete_btn(username).click()             # Click <Delete> button

@@ -8,7 +8,7 @@ from pages.main.login_page import LoginPage
 from func.api import API
 
 #===================================================== Playwright ======================================================
-""" Page + Storage State 🗄️ """
+# ---- Page + Storage State 🗄️-----
 @pytest.fixture
 def page(playwright: Playwright, storage_state):            # User Log in + фикстура storage_state
     browser = playwright.chromium.launch(                   # Запуск движка браузера с параметрами:
@@ -30,8 +30,8 @@ def page(playwright: Playwright, storage_state):            # User Log in + фи
     context.close()
     browser.close()
 
-#------------------------------------------------------
-""" GUEST Page (БЕЗ storage_state) """
+
+# ---- GUEST Page (БЕЗ storage_state) ----
 @pytest.fixture
 def page_guest(playwright: Playwright):                     # Чистый (без доп. фикстур)
     """
@@ -59,8 +59,7 @@ def page_guest(playwright: Playwright):                     # Чистый (бе
     browser.close()
 
 
-#-----------------------------------------------------------------------------------------------------------------------
-""" Storage State 🗄 """  # (шире, чем Cookies)
+# ---- Storage State 🗄----
 """
 -----------------------------------------------------------
 1) Залогинил User
@@ -80,8 +79,7 @@ def storage_state(playwright: Playwright):
     context.close()
     browser.close()
 
-#-------------------------------------
-""" Cookies 🍪"""  # (⚠️️НЕ использую)
+# ---- Cookies 🍪 (⚠️️НЕ использую) ----
 @pytest.fixture(scope='session')
 def cookies(playwright: Playwright):
     browser = playwright.chromium.launch()
@@ -94,30 +92,32 @@ def cookies(playwright: Playwright):
 
 
 #================================================ API-fixtures (Pre-test) ==============================================
-# ------------ Create items ------------
-""" Create Pipeline """
+# ---- Create items ----
+# Create Pipeline
 @pytest.fixture
 def api_create_pipeline():
     API.create_pipeline()
 
-""" Create Freestyle project """
+# Create Freestyle project
 @pytest.fixture
 def api_create_freestyle_project():
     API.create_freestyle_project()
 
-""" Create Multi-configuration project """
+# Create Multi-configuration project
 @pytest.fixture
 def api_create_multi_configuration_project():
     API.create_multi_configuration_project()
 
-""" Create Folder """
+# Create Folder
 @pytest.fixture
 def api_create_folder():
     API.create_pipeline()
 
-# ------------- Delete items -------------
-""" Delete ALL items (jobs) """
+# Delete items
 @pytest.fixture
 def api_delete_all_items():
     API.delete_all_items()
+
+# ----   ----
+
 #-----------------------------------------------------------------------------------------------------------------------

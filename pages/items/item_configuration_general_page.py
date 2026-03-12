@@ -19,7 +19,7 @@ class ConfigurationGeneralPage(BasePage):
             def <func>():
                  return ...
         """
-    # ------------------ 𝌆 DATA: ------------------
+    #-------------------------------------------------- 𝌆 DATA: --------------------------------------------------------
     HEADER_TEXT = 'General'
     @staticmethod
     def endpoint(item_name: str):
@@ -28,18 +28,18 @@ class ConfigurationGeneralPage(BasePage):
     def title_text(item_name: str):
         return f'{item_name} Config - Jenkins'
 
-    # ---------------- ㉧ LOCATORS: ----------------
-    # - Texts -
+    # ------------------------------------------------ ㉧ LOCATORS: -----------------------------------------------------
+    # ---- Texts ----
     @property
     def header(self):
         return self.page.locator('#general')
 
-    # - Fields -
+    # ---- Fields ----
     @property
     def display_name_field(self):
         return self.page.locator('input[name="_.displayNameOrNull"]')
 
-    # - Buttons -
+    # ---- Buttons -----
     @property
     def save_btn(self):
         return self.page.get_by_role('button', name='Save')
@@ -48,12 +48,12 @@ class ConfigurationGeneralPage(BasePage):
         return self.page.get_by_role('button', name='Apply')
 
 
-    #================================================== ✨HELPERS ======================================================
-    """ Open <Item Configuration - General> page """
+    #=================================================== ✨HELPERS =====================================================
+    # Open <Item Configuration - General> page
     def open(self, item_name: str):
         return self.open_page(self.endpoint(item_name))         # Open <Item Configuration - General> page               http://localhost:8080/job/=ITEM_NAME=/configure
 
-    """ Fill Display name (Folder) """
+    # Fill Display name (Folder)
     def fill_display_name(self, display_item_name: str):
         self.display_name_field.fill(display_item_name)         # Fill <Display Name> field (User-friendly)
         self.save_btn.click()                                   # Click <Save> button -→ <Folder> page                   http://localhost:8080/job/=ITEM_NAME=/

@@ -7,13 +7,13 @@ from data.base_data import Base
 
 #=======================================================================================================================
 class LoginPage(BasePage):
-    # ------------------ 𝌆 DATA: ------------------
+    # -------------------------------------------------- 𝌆 DATA --------------------------------------------------------
     ENDPOINT = '/login'
     TITLE_TEXT = 'Sign in - Jenkins'
     HEADER_TEXT = 'Sign in to Jenkins'
 
-    # ---------------- ㉧ LOCATORS: ----------------
-    # -Fields-
+    # ------------------------------------------------ ㉧ LOCATORS ------------------------------------------------------
+    # ---- Fields ----
     @property
     def username_field(self):
         return self.page.locator('#j_username')
@@ -24,18 +24,18 @@ class LoginPage(BasePage):
     def keep_signed_checkbox(self):
         return self.page.locator('label[for="remember_me"]')
 
-    # -Buttons-
+    # ---- Buttons ----
     @property
     def sign_in_btn(self):
         return self.page.locator('button[name="Submit"]')
 
 
-    #===================================================== ✨HELPERS ===================================================
-    """ Open <Login> page """
+    #================================================== ✨HELPERS ======================================================
+    # Open <Login> page
     def open(self):
         self.open_page(self.ENDPOINT)                             # Open <Login> page                                    http://localhost:8080/login
 
-    """ Authorization (Log in) """                                # Admin data by Default
+    # Authorization (Log in)                                      # Admin data by Default
     def user_log_in(
             self,
             username: str = Base.USERNAME,

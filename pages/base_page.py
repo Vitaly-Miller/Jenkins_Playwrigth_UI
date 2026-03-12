@@ -9,13 +9,29 @@ class BasePage:
     def __init__(self, page: Page):
         self.page = page
 
-    # ------------------ 𝌆 DATA: ------------------
+    # -------------------------------------------------- 𝌆 DATA --------------------------------------------------------
     EDIT_DESCRIPTION_BTN_TEXT = 'Edit description'
     SAVE_DESCRIPTION_BTN_TEXT = 'Save'
     CANCEL_DESCRIPTION_BTN_TEXT = 'Cancel'
 
-    # ---------------- ㉧ LOCATORS: ----------------
-    # -⬆ ︎Nav bar-
+    # ------------------------------------------------ ㉧ LOCATORS ------------------------------------------------------
+    # ---- Buttons -----
+    @property
+    def logo_btn(self):
+        return self.page.locator('.app-jenkins-logo')                            # -→ <Main> page (Dashboard)            http://localhost:8080/
+    @property
+    def manage_jenkins_btn(self):
+        return self.page.get_by_role('link', name='Manage Jenkins')         # -→ <Manage Jenkins> page              http://localhost:8080/manage
+
+    # ---- Tab bar -----
+    @property
+    def all_btn(self):
+        return self.page.get_by_role('link', name='All')                    # -→ <Main> page (Dashboard)             http://localhost:8080/
+    @property
+    def new_view_btn(self):
+        return self.page.get_by_role('link', name='New View')               # -→ <New View> page                     http://localhost:8080/newView
+
+    # ---- ⬆ ︎Nav bar ----
     @property
     def nav_bar(self):
         return self.page.locator('#page-header')
@@ -25,15 +41,8 @@ class BasePage:
     @property
     def breadcrumbs(self):
         return self.page.locator('li.jenkins-breadcrumbs__list-item')
-    # --Buttons--
-    @property
-    def logo_btn(self):
-        return self.page.locator('.app-jenkins-logo')                           # -→ <Main> page (Dashboard)             http://localhost:8080/
-    @property
-    def manage_jenkins_btn(self):
-        return self.page.get_by_role('link', name='Manage Jenkins')        # -→ <Manage Jenkins> page              http://localhost:8080/manage
 
-    # -⬅︎ Left side panel-
+    # ---- ⬅︎ Left side panel ----
     @property
     def left_panel(self):
         return self.page.locator('#side-panel')
@@ -51,14 +60,15 @@ class BasePage:
         return self.page.get_by_role('link', name='New Item')
     @property
     def delete_item_link(self):
-        return self.page.locator('[class="icon-edit-delete icon-md"]')                 # 🗑️ (by icon)
+        return self.page.locator('[class="icon-edit-delete icon-md"]')             # 🗑️ (by icon)
     @property
     def delete_item_confirm_yes_btn(self):
         return self.page.locator('button[data-id="ok"]')
     @property
     def build_history_link(self):
         return self.page.get_by_role('link', name='Build History')
-    # --Rename--
+
+    # ---- Rename -----
     @property
     def rename_link(self):
         return self.page.get_by_role('link', name='Rename')
@@ -68,7 +78,6 @@ class BasePage:
     @property
     def rename_button(self):
         return self.page.get_by_role('button', name="Rename")
-
     @property
     def credentials_link(self):
         return self.page.get_by_role('link', name='Credentials')
@@ -88,26 +97,16 @@ class BasePage:
     def pipeline_syntax_link(self):
         return self.page.get_by_role('link', name='Pipeline Syntax')
 
-    # ⧈ Main panel (center)
+    # ---- ⧈ Main panel (center) -----
     @property
     def main_panel(self):
         return self.page.locator('#main-panel')
 
-    # ⬇︎ Footer panel
+    # ---- ⬇︎ Footer panel -----
     def footer(self):
         return self.page.locator('#footer')
 
-
-    # -Tab bar-
-    @property
-    def all_btn(self):
-        return self.page.get_by_role('link', name='All')                   # -→ <Main> page (Dashboard)             http://localhost:8080/
-    @property
-    def new_view_btn(self):
-        return self.page.get_by_role('link', name='New View')              # -→ <New View> page                     http://localhost:8080/newView
-
-
-    # -Description-
+    # ---- Description ----
     @property
     def add_description_btn(self):
         return self.page.locator('#description-link')
@@ -128,25 +127,26 @@ class BasePage:
         return self.page.locator('#description-content')
 
 
-    #================================================= ✨HELPERS =======================================================
-    """ BASE OPEN PAGE """
+
+    #================================================== ✨HELPERS ======================================================
+    # BASE OPEN PAGE
     def open_page(self, endpoint: str):
         self.page.goto(endpoint)
 
-    # Description
-    """ Add description """
+    # ---- Description ----
+    # Add description
     def add_description(self, text: str):
         self.add_description_btn.click()                           # Open description form
         self.description_field.fill(text)                          # Fill text
         self.save_description_btn.click()                          # Click Save button (Save description)
 
-    """ Edit description """
+    # Edit description
     def edit_description(self, text: str):
         self.edit_description_btn.click()                          # Open description form
         self.description_field.fill(text)                          # Fill text                                           (⚠ Предварительная отчистка поля не требуется)
         self.save_description_btn.click()                          # Click Save button (Save description)
 
-    """ Clear description """
+    # Clear description
     def clear_description(self):
         self.add_description_btn.click()                           # Open description filling form
         self.description_field.clear()                             # Clear description field

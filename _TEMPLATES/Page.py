@@ -6,25 +6,26 @@ from pages.base_page import BasePage
 
 #=======================================================================================================================
 class NewPage(BasePage):
-    # ------------------- 𝌆 DATA: -------------------
+    # -------------------------------------------------- 𝌆 DATA --------------------------------------------------------
     ENDPOINT = ''
     TITLE_TEXT = ''
     HEADER_TEXT = ''
 
-    # --------------- 🅔 DATA (Errors): --------------
+    # ----------------------------------------------- 🅔 ERROR data ----------------------------------------------------
 
-    # ------------------ ㉧ LOCATORS: -----------------
-    # -Buttons-
+
+    # ------------------------------------------------ ㉧ LOCATORS ------------------------------------------------------
+    # ---- Buttons ----
     @property
     def xxx_btn(self):
         return self.page.locator('')
 
-    # -Fields-
+    # ---- Fields ----
 
-    # -Errors-
+    # ---- Errors ----
 
 
     #================================================== ✨HELPERS ======================================================
-    """ Open <New> page """
+    # Open <New> page
     def open(self):
-        return self.open_page(self.ENDPOINT)                 # -→ <New> page                                             https://website.com/=NEW_PAGE=
+        return self.open_page(self.ENDPOINT)            # -→ <New> page                                                  https://website.com/=NEW_PAGE=
