@@ -8,20 +8,19 @@ from formatting.console_report import APIreport
 
 #=======================================================================================================================
 class APIintercept:
-    # ---------------- API interception  -----------------
-    # Intercept by Status code
     """
-        Ожидание Request + Перехват Response <status code>
-        ➡︎ .expect_response() - Playwright говорит браузеру:
-             1. «Когда в ближайшее время произойдёт сетевой ЗАПРОС — перехвати его».
-             2. «И как только придёт НУЖНЫЙ ответ → положи его в переменную response_info».
+    Ожидание Request + Перехват Response <status code>
+    ➡︎ .expect_response() - Playwright говорит браузеру:
+         1. «Когда в ближайшее время произойдёт сетевой ЗАПРОС — перехвати его».
+         2. «И как только придёт НУЖНЫЙ ответ → положи его в переменную response_info».
 
-        ➡︎ lambda r: r.status == 200
-             1) Перехвати КАЖДЫЙ сетевой ОТВЕТ
-             2) Подставь его в lambda как аргумент <r>
-             3) Проверь условие (r.status == 200)
-             4) Как только условие вернуло True — это "наш" <r> → положи его в переменную response_info
-    """
+    ➡︎ lambda r: r.status == 200
+         1) Перехвати КАЖДЫЙ сетевой ОТВЕТ
+         2) Подставь его в lambda как аргумент <r>
+         3) Проверь условие (r.status == 200)
+         4) Как только условие вернуло True — это "наш" <r> → положи его в переменную response_info
+        """
+    # Intercept by Status code
     @staticmethod
     def by_status_code(page, action, code: int, api_report: bool = False):        # NO API report by default
         with page.expect_response(lambda r: r.status == code) as response_info:   # Перехватить Response с определенным <status code>
@@ -44,8 +43,7 @@ class APIintercept:
 
 #=======================================================================================================================
 class API:
-    # ======================= Users =======================
-    # -------------------- Create user --------------------
+    # ---- Users ----
     # Create user
     @staticmethod
     def create_user(
@@ -67,7 +65,6 @@ class API:
             }
         )
 
-    # -------------------- Delete user --------------------
     # Delete user by username
     @staticmethod
     def delete_user(username: str):
@@ -76,8 +73,8 @@ class API:
             auth=(Base.USERNAME, Base.API_TOKEN)
         )
 
-    # ==================== Items (Jobs) ===================
-    # -------------- Create item (All-in-One) -------------
+    # ---- Items (Jobs) ----
+    # Create item (All-in-One)
     @staticmethod
     def create_item(
             item_type: str = Fake.random_item_type,
@@ -103,7 +100,7 @@ class API:
             }
         )
 
-    # -------------- Create item (by Type) --------------
+    # Create item (by Type):
     # Create Pipeline
     @staticmethod
     def create_pipeline(item_name: str = Fake.item_name):
@@ -152,7 +149,7 @@ class API:
             }
         )
 
-    # ------------------ Delete items -----------------
+    # ---- Delete items ----
     # Delete item (job) by nane
     @staticmethod
     def delete_item(item_name: str):
@@ -178,9 +175,7 @@ class API:
 
 
 
-
-
-    #================ API REPORT (8-in-1) ================
+    #================================================ API REPORT (8-in-1) ==============================================
     """ ⚠️USE with .expect_response() only """
     @staticmethod
     def report(response):
@@ -192,3 +187,4 @@ class API:
         APIreport.response_body(response)
         APIreport.request_headers(response)
         APIreport.response_headers(response)
+    # ==================================================================================================================

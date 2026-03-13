@@ -7,7 +7,7 @@ from formatting.colors import *
 #=======================================================================================================================
 class APIreport:
     """ ⚠️USE with .expect_response() only """
-    # ------------------------- Base ----------------------
+    # ---- Base ----
     # Title
     @staticmethod
     def title():
@@ -44,7 +44,7 @@ class APIreport:
         else: color = RESET
         print(f'{GRAY}└╴Status code: {color}{obj}{RESET}')
 
-    # ------------------------ JSON -----------------------
+    # ---- JSON ----
     # Request headers ⮕
     @staticmethod
     def request_headers(response):
