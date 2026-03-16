@@ -26,4 +26,4 @@ class ViewPage(BasePage):
     #================================================== ✨HELPERS ======================================================
     # Open <View> page
     def open(self, item_name: str, view_name: str):
-        return self.open_page(self.endpoint(item_name, view_name))        # Open <View> page                             http://localhost:8080/job/=ITEM_NAME=/view/=VIEW_NAME=/
+        self.open_page(self.endpoint(item_name, view_name))               # Open <View> page                             http://localhost:8080/job/=ITEM_NAME=/view/=VIEW_NAME=/

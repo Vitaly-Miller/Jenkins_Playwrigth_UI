@@ -103,6 +103,7 @@ class BasePage:
         return self.page.locator('#main-panel')
 
     # ---- ⬇︎ Footer panel -----
+    @property
     def footer(self):
         return self.page.locator('#footer')
 

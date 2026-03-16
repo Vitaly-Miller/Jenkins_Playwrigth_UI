@@ -17,7 +17,7 @@ def page(playwright: Playwright, storage_state):            # User Log in + фи
         slow_mo=500                                         # - Action Delay (ms)
     )
     context = browser.new_context(                          # Создание браузерного окружения:
-        locale="en-US",                                     # - Website language (locale)
+        locale='en-US',                                     # - Website language (locale)
         viewport=ViewportSize(width=1100, height=1200),     # - Screen size
         base_url=Base.URL,                                  # - Base URL (from data/base_data.py)
         storage_state=storage_state                         # - storage_state 🗄️- Авторизация (cookies + localStorage)
@@ -31,6 +31,7 @@ def page(playwright: Playwright, storage_state):            # User Log in + фи
     browser.close()
 
 
+
 # ---- GUEST Page (БЕЗ storage_state) ----
 @pytest.fixture
 def page_guest(playwright: Playwright):                     # Чистый (без доп. фикстур)
@@ -41,7 +42,7 @@ def page_guest(playwright: Playwright):                     # Чистый (бе
     page = page_guest ✨
     page.locator().click()
     ----------------------
-    """ # <- ✨                                             # <- см. Лайфхак ✨
+    """ # <- ✨                                       # <- см. Лайфхак ✨
     browser = playwright.chromium.launch(                   # Запуск движка браузера с параметрами:
         channel='chromium',                                 # - UI оболочка: 'chromium', 'chrome', 'opera'
         headless=False,                                     # - False = показывать браузер

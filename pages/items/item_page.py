@@ -10,6 +10,7 @@ class ItemPage(BasePage):
     @staticmethod
     def endpoint(item_name: str):
         return f'/view/all/job/{item_name}/'
+
     @staticmethod
     def title_text(item_name: str):
         return f'{item_name} - Jenkins'

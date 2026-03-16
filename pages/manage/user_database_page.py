@@ -42,7 +42,7 @@ class UserDatabasePage(BasePage):
 
 
     #================================================== ✨HELPERS ======================================================
-   # Open <Jenkins’ own User Database> page
+    # Open <Jenkins’ own User Database> page
     def open(self):
         self.open_page(self.ENDPOINT)                               # Open <Jenkins’ own user database> page             http://localhost:8080/manage/securityRealm
 

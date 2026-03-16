@@ -12,8 +12,8 @@ class MainPage(BasePage):
     DEFAULT_HEADER_TEXT = 'Welcome to Jenkins!'                                   # When NO items (jobs)
 
     # ------------------------------------------------ ㉧ LOCATORS ------------------------------------------------------
+    # ---- Header ----
     @property
-    # Header
     def default_header(self):
         return self.page.get_by_role("heading", name='Welcome to Jenkins!')  # When NO items (jobs)
 
