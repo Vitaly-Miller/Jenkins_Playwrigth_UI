@@ -1,6 +1,6 @@
 """
 Data generators
-(Fake & Random data)
+(Fake & Random)
 """
 import random
 from faker import Faker
