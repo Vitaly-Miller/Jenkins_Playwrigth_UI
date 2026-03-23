@@ -27,12 +27,15 @@ class NewItemPage(BasePage):
     @property
     def freestyle_project_link(self):
         return self.page.get_by_text('Freestyle project', exact=True)
+
     @property
     def pipeline_link(self):
         return self.page.get_by_text('Pipeline', exact=True)
+
     @property
     def multi_configuration_project_link(self):
         return self.page.get_by_text('Multi-configuration project', exact=True)
+
     @property
     def folder_link(self):
         return self.page.get_by_text('Folder', exact=True)

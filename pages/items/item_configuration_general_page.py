@@ -21,9 +21,11 @@ class ConfigurationGeneralPage(BasePage):
         """
     #-------------------------------------------------- 𝌆 DATA: --------------------------------------------------------
     HEADER_TEXT = 'General'
+
     @staticmethod
     def endpoint(item_name: str):
         return f'/view/all/job/{item_name}/configure'
+
     @staticmethod
     def title_text(item_name: str):
         return f'{item_name} Config - Jenkins'
@@ -43,6 +45,7 @@ class ConfigurationGeneralPage(BasePage):
     @property
     def save_btn(self):
         return self.page.get_by_role('button', name='Save')
+
     @property
     def apply_btn(self):
         return self.page.get_by_role('button', name='Apply')
